@@ -14,6 +14,9 @@ def main():
 
     path = sys.argv[1]
     doc = load_dxf(path)
+    if doc is None:
+        sys.exit(1)
+
     contours = extract_contours(doc)
     print(f"Contorni estratti (LWPOLYLINE/POLYLINE): {len(contours)}")
     print_report(contours)
