@@ -1,0 +1,13 @@
+{
+  "_description": "Markup standard per richieste di approvazione. Sostituire <RUN_ID> con UUID del run in attesa.",
+  "_template": true,
+  "inline_keyboard": [
+    [
+      { "text": "✅ Approva", "callback_data": "cb:approve:<RUN_ID>" },
+      { "text": "❌ Annulla", "callback_data": "cb:reject:<RUN_ID>" }
+    ],
+    [
+      { "text": "👀 Anteprima dettaglio", "callback_data": "cb:preview:<RUN_ID>" }
+    ]
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "name": "🧪 AGENCY · Diagnostics · Ping (v1)",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "GET",
+        "path": "ping",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook-ping",
+      "name": "Webhook · ping",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [240, 300],
+      "webhookId": "ping-diagnostic-v1"
+    },
+    {
+      "parameters": {
+        "jsCode": "const now = new Date();\nreturn [{\n  json: {\n    ok: true,\n    ts: now.toISOString(),\n    workflow: 'agency__diagnostics__ping__v1',\n    n8n_instance: $env.N8N_URL || 'unknown',\n    message: 'pong'\n  }\n}];"
+      },
+      "id": "build-response",
+      "name": "Build response",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}",
+        "options": {
+          "responseCode": 200
+        }
+      },
+      "id": "respond",
+      "name": "Respond",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [680, 300]
+    }
+  ],
+  "connections": {
+    "Webhook · ping": {
+      "main": [[{ "node": "Build response", "type": "main", "index": 0 }]]
+    },
+    "Build response": {
+      "main": [[{ "node": "Respond", "type": "main", "index": 0 }]]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "tags": [
+    { "name": "agency" },
+    { "name": "diagnostics" },
+    { "name": "webhook" }
+  ],
+  "meta": {
+    "instanceId": "placeholder",
+    "description": "Diagnostic endpoint per verificare che n8n risponda. Richiamato sia direttamente via curl sia dal bot Telegram come comando /ping per validazione end-to-end."
+  }
+}

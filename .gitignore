@@ -1,3 +1,16 @@
+# Secrets & local config
+.env
+.env.*
+!.env.example
+*.local
+*.local.json
+secrets/
+credentials/
+
+# n8n exports che possono contenere secrets
+*-with-secrets.json
+*.private.json
+
 # Logs
 logs
 *.log
@@ -7,12 +20,12 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Build artefatti (legacy video editor)
 node_modules
 dist
 dist-ssr
-*.local
 
-# Editor directories and files
+# Editor / OS
 .vscode/*
 !.vscode/extensions.json
 .idea
@@ -22,3 +35,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+Thumbs.db
+
+# Output temporanei
+tmp/
+.tmp/

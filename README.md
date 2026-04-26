@@ -1,73 +1,55 @@
-# React + TypeScript + Vite
+# n8n B2B Automation Workspace
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Workspace versionato di un'**agenzia di marketing/automation B2B in Italia** che opera su 5 nicchie verticali (software/SaaS, agenzie marketing, consulenti/liberi professionisti, avvocati, commercialisti).
 
-Currently, two official plugins are available:
+Tutta l'orchestrazione viene gestita su **n8n self-hosted**, con un **bot Telegram** come Command Center per pilotare workflow, ricevere notifiche e dare approvazioni.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Struttura
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+n8n-workflows/
+  agency-internal/    # workflow per l'agenzia (lead-gen, outreach, onboarding, reporting)
+  clients/            # workflow consegnati ai clienti, raggruppati per nicchia
+  shared/             # sub-workflow riusabili (AI scoring, GDPR check, ecc.)
+telegram-bot/         # design del bot: comandi, menu, mappatura webhook
+docs/                 # architettura, strategia, naming, GDPR, stack Italia
+templates/            # email cold outreach, report, prompt AI in italiano
+_archive/             # contenuti precedenti del repo (video editor)
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Modello di lavoro "Git as source of truth"
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. Sviluppi workflow in n8n UI (più veloce per il visual)
+2. Esporti il JSON e lo committi nella cartella corretta
+3. Naming convention: `[scope]__[categoria]__[azione]__v[N].json`
+   Es: `agency__leadgen__apollo-scrape__v1.json`
+4. Le modifiche/refactor vengono fatte sul JSON nel repo e reimportate su n8n
+5. Secrets MAI in JSON: usare credenziali n8n + variabili `.env`
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Setup iniziale
+
+```bash
+cp .env.example .env
+# Editare .env con i propri valori (n8n URL, API key, Telegram token, ecc.)
 ```
+
+Documenti chiave da leggere nell'ordine:
+
+1. [`docs/architecture.md`](docs/architecture.md) — flusso Telegram → n8n → tools
+2. [`docs/strategy.md`](docs/strategy.md) — roadmap 30/60/90 + offerta per nicchia
+3. [`docs/naming-convention.md`](docs/naming-convention.md) — convention workflow + tag n8n
+4. [`docs/gdpr-italia.md`](docs/gdpr-italia.md) — checklist compliance
+5. [`telegram-bot/router-design.md`](telegram-bot/router-design.md) — design del Command Center
+
+## Test end-to-end del Command Center
+
+Dopo aver popolato `.env`:
+
+1. Importare `n8n-workflows/agency-internal/_diagnostics/ping__v1.json` su n8n
+2. Attivare il webhook, copiare URL
+3. Da terminale: `curl <webhook-url>` → deve rispondere `{ok:true, ts:...}`
+4. Importare `n8n-workflows/agency-internal/_router/telegram-dispatcher__v1.json`
+5. Configurare il webhook Telegram verso quel workflow
+6. Mandare `/ping` al bot → deve rispondere con timestamp
+
+Se entrambi i passi funzionano, l'infrastruttura Command Center è OK.

@@ -1,0 +1,249 @@
+{
+  "name": "🤖 AGENCY · Router · Telegram Dispatcher (v1)",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": ["message", "callback_query"],
+        "additionalFields": {}
+      },
+      "id": "telegram-trigger",
+      "name": "Telegram Trigger",
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.1,
+      "position": [200, 400],
+      "credentials": {
+        "telegramApi": {
+          "id": "REPLACE_WITH_YOUR_TELEGRAM_CREDENTIAL_ID",
+          "name": "telegram__bot-agency"
+        }
+      },
+      "webhookId": "telegram-dispatcher-v1"
+    },
+    {
+      "parameters": {
+        "jsCode": "const u = $json;\nconst msg = u.message || u.edited_message;\nconst cb = u.callback_query;\n\nlet chat_id, user, text, type, command, args = [], callback_data = null, message_id = null;\n\nif (cb) {\n  type = 'callback';\n  chat_id = cb.message.chat.id;\n  user = cb.from.username || cb.from.first_name || String(cb.from.id);\n  callback_data = cb.data || '';\n  text = callback_data;\n  message_id = cb.message.message_id;\n  const parts = callback_data.split(':');\n  command = parts.slice(0, 2).join(':');\n  args = parts.slice(2);\n} else if (msg) {\n  type = 'message';\n  chat_id = msg.chat.id;\n  user = msg.from.username || msg.from.first_name || String(msg.from.id);\n  text = msg.text || '';\n  message_id = msg.message_id;\n  const parts = text.trim().split(/\\s+/);\n  command = (parts[0] || '').toLowerCase();\n  args = parts.slice(1);\n} else {\n  return [];\n}\n\nreturn [{ json: { type, chat_id, user, text, command, args, callback_data, message_id, raw: u } }];"
+      },
+      "id": "normalize",
+      "name": "Normalize",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [420, 400]
+    },
+    {
+      "parameters": {
+        "jsCode": "const adminIds = ($env.TELEGRAM_ADMIN_CHAT_IDS || '').split(',').map(s => s.trim()).filter(Boolean);\nconst chatId = String($json.chat_id);\nlet role = null;\nif (adminIds.includes(chatId)) role = 'admin';\n// TODO: aggiungere lookup whitelist clienti da Airtable\nconst authorized = role !== null;\nreturn [{ json: { ...$json, role, authorized } }];"
+      },
+      "id": "authorize",
+      "name": "Authorize",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [640, 400]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": { "caseSensitive": true, "leftValue": "", "typeValidation": "strict" },
+          "conditions": [
+            {
+              "leftValue": "={{ $json.authorized }}",
+              "rightValue": true,
+              "operator": { "type": "boolean", "operation": "true" }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "is-authorized",
+      "name": "Is authorized?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [860, 400]
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $json.chat_id }}",
+        "text": "🚫 Non sei autorizzato a usare questo bot.\n\nSe pensi sia un errore, contatta l'amministratore.",
+        "additionalFields": {}
+      },
+      "id": "reply-unauthorized",
+      "name": "Reply unauthorized",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [1080, 540],
+      "credentials": {
+        "telegramApi": {
+          "id": "REPLACE_WITH_YOUR_TELEGRAM_CREDENTIAL_ID",
+          "name": "telegram__bot-agency"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            { "conditions": { "conditions": [{ "leftValue": "={{ $json.command }}", "rightValue": "/ping", "operator": { "type": "string", "operation": "equals" } }], "combinator": "and" }, "outputKey": "ping" },
+            { "conditions": { "conditions": [{ "leftValue": "={{ $json.command }}", "rightValue": "/start", "operator": { "type": "string", "operation": "equals" } }], "combinator": "and" }, "outputKey": "help" },
+            { "conditions": { "conditions": [{ "leftValue": "={{ $json.command }}", "rightValue": "/help", "operator": { "type": "string", "operation": "equals" } }], "combinator": "and" }, "outputKey": "help" },
+            { "conditions": { "conditions": [{ "leftValue": "={{ $json.command }}", "rightValue": "/menu", "operator": { "type": "string", "operation": "equals" } }], "combinator": "and" }, "outputKey": "menu" },
+            { "conditions": { "conditions": [{ "leftValue": "={{ $json.command }}", "rightValue": "cb:menu", "operator": { "type": "string", "operation": "equals" } }], "combinator": "and" }, "outputKey": "menu" },
+            { "conditions": { "conditions": [{ "leftValue": "={{ $json.command }}", "rightValue": "cb:cmd", "operator": { "type": "string", "operation": "equals" } }], "combinator": "and" }, "outputKey": "cb_cmd" }
+          ]
+        },
+        "options": { "fallbackOutput": "extra" },
+        "fallbackOutputName": "unknown"
+      },
+      "id": "route",
+      "name": "Route",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [1080, 360]
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $json.chat_id }}",
+        "text": "🏓 *pong*\n\nTimestamp: `{{ $now.toISO() }}`\nWorkflow: `agency__router__telegram-dispatcher__v1`\nUser: @{{ $json.user }} (role: {{ $json.role }})",
+        "additionalFields": {
+          "parse_mode": "Markdown"
+        }
+      },
+      "id": "reply-ping",
+      "name": "Reply /ping",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [1340, 200],
+      "credentials": {
+        "telegramApi": {
+          "id": "REPLACE_WITH_YOUR_TELEGRAM_CREDENTIAL_ID",
+          "name": "telegram__bot-agency"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $json.chat_id }}",
+        "text": "👋 *Command Center Agency*\n\nComandi disponibili:\n• `/menu` — menu interattivo\n• `/leads [N]` — ultimi lead\n• `/report <cliente>` — genera report\n• `/clienti` — lista clienti attivi\n• `/scadenze [gg]` — scadenze prossime\n• `/approva` — azioni in attesa\n• `/outreach <campagna>` — triggera campagna\n• `/ping` — test connettività\n• `/help` — questo messaggio",
+        "additionalFields": {
+          "parse_mode": "Markdown"
+        }
+      },
+      "id": "reply-help",
+      "name": "Reply /help",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [1340, 320],
+      "credentials": {
+        "telegramApi": {
+          "id": "REPLACE_WITH_YOUR_TELEGRAM_CREDENTIAL_ID",
+          "name": "telegram__bot-agency"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $json.chat_id }}",
+        "text": "🎛 *Menu principale*\n\nCosa vuoi fare?",
+        "replyMarkup": "inlineKeyboard",
+        "inlineKeyboard": {
+          "rows": [
+            { "row": { "buttons": [{ "text": "📊 Lead", "additionalFields": { "callback_data": "cb:menu:leads" } }, { "text": "📈 Report", "additionalFields": { "callback_data": "cb:menu:report" } }] } },
+            { "row": { "buttons": [{ "text": "👥 Clienti", "additionalFields": { "callback_data": "cb:menu:clienti" } }, { "text": "📅 Scadenze", "additionalFields": { "callback_data": "cb:menu:scadenze" } }] } },
+            { "row": { "buttons": [{ "text": "✉️ Outreach", "additionalFields": { "callback_data": "cb:menu:outreach" } }, { "text": "✅ Approva", "additionalFields": { "callback_data": "cb:menu:approve" } }] } },
+            { "row": { "buttons": [{ "text": "🧪 Ping", "additionalFields": { "callback_data": "cb:cmd:ping" } }, { "text": "❓ Help", "additionalFields": { "callback_data": "cb:cmd:help" } }] } }
+          ]
+        },
+        "additionalFields": {
+          "parse_mode": "Markdown"
+        }
+      },
+      "id": "reply-menu",
+      "name": "Reply /menu",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [1340, 440],
+      "credentials": {
+        "telegramApi": {
+          "id": "REPLACE_WITH_YOUR_TELEGRAM_CREDENTIAL_ID",
+          "name": "telegram__bot-agency"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $json.chat_id }}",
+        "text": "🔧 Sotto-menu *{{ $json.args[0] }}* in costruzione.\n\nUsa /help per i comandi diretti già attivi.",
+        "additionalFields": {
+          "parse_mode": "Markdown"
+        }
+      },
+      "id": "reply-cb-cmd",
+      "name": "Reply cb:cmd / cb:menu",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [1340, 560],
+      "credentials": {
+        "telegramApi": {
+          "id": "REPLACE_WITH_YOUR_TELEGRAM_CREDENTIAL_ID",
+          "name": "telegram__bot-agency"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $json.chat_id }}",
+        "text": "🤔 Comando non riconosciuto: `{{ $json.command }}`\n\nUsa /help per la lista dei comandi disponibili.",
+        "additionalFields": {
+          "parse_mode": "Markdown"
+        }
+      },
+      "id": "reply-unknown",
+      "name": "Reply unknown",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [1340, 680],
+      "credentials": {
+        "telegramApi": {
+          "id": "REPLACE_WITH_YOUR_TELEGRAM_CREDENTIAL_ID",
+          "name": "telegram__bot-agency"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Telegram Trigger": {
+      "main": [[{ "node": "Normalize", "type": "main", "index": 0 }]]
+    },
+    "Normalize": {
+      "main": [[{ "node": "Authorize", "type": "main", "index": 0 }]]
+    },
+    "Authorize": {
+      "main": [[{ "node": "Is authorized?", "type": "main", "index": 0 }]]
+    },
+    "Is authorized?": {
+      "main": [
+        [{ "node": "Route", "type": "main", "index": 0 }],
+        [{ "node": "Reply unauthorized", "type": "main", "index": 0 }]
+      ]
+    },
+    "Route": {
+      "main": [
+        [{ "node": "Reply /ping", "type": "main", "index": 0 }],
+        [{ "node": "Reply /help", "type": "main", "index": 0 }],
+        [{ "node": "Reply /menu", "type": "main", "index": 0 }],
+        [{ "node": "Reply cb:cmd / cb:menu", "type": "main", "index": 0 }],
+        [{ "node": "Reply unknown", "type": "main", "index": 0 }]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "tags": [
+    { "name": "agency" },
+    { "name": "telegram" },
+    { "name": "router" }
+  ],
+  "meta": {
+    "description": "Dispatcher centrale del Command Center. Riceve TUTTI gli update Telegram (message + callback_query), normalizza, autorizza, instrada al sub-workflow corretto. Lo scheletro qui implementa /ping /help /menu + fallback. I comandi business (/leads /report /outreach ecc.) si aggiungono come ulteriori output dello Switch + invocazione Execute Workflow."
+  }
+}

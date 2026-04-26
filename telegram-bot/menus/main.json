@@ -1,0 +1,21 @@
+{
+  "_description": "Menu principale del Command Center. Inviare come reply_markup con il messaggio di /menu.",
+  "inline_keyboard": [
+    [
+      { "text": "📊 Lead", "callback_data": "cb:menu:leads" },
+      { "text": "📈 Report", "callback_data": "cb:menu:report" }
+    ],
+    [
+      { "text": "👥 Clienti", "callback_data": "cb:menu:clienti" },
+      { "text": "📅 Scadenze", "callback_data": "cb:menu:scadenze" }
+    ],
+    [
+      { "text": "✉️ Outreach", "callback_data": "cb:menu:outreach" },
+      { "text": "✅ Approva", "callback_data": "cb:menu:approve" }
+    ],
+    [
+      { "text": "🧪 Ping", "callback_data": "cb:cmd:ping" },
+      { "text": "❓ Help", "callback_data": "cb:cmd:help" }
+    ]
+  ]
+}

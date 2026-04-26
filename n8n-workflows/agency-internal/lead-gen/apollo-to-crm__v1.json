@@ -1,0 +1,217 @@
+{
+  "name": "🎯 AGENCY · Leadgen · Apollo → CRM (v1)",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [{ "field": "cronExpression", "expression": "0 9 * * 1" }]
+        }
+      },
+      "id": "schedule",
+      "name": "Schedule (lun 9:00)",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [200, 400]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apollo.io/v1/mixed_people/search",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Content-Type", "value": "application/json" },
+            { "name": "Cache-Control", "value": "no-cache" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"q_organization_locations\": [\"Italy\"],\n  \"person_titles\": [\"founder\", \"ceo\", \"managing director\", \"head of marketing\", \"sales director\"],\n  \"organization_num_employees_ranges\": [\"5,50\"],\n  \"page\": 1,\n  \"per_page\": 25\n}",
+        "options": {}
+      },
+      "id": "apollo-search",
+      "name": "Apollo · search people IT",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [420, 400],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "REPLACE_WITH_APOLLO_CREDENTIAL_ID",
+          "name": "apollo__agency"
+        }
+      },
+      "notes": "Header X-Api-Key configurato in credenziale apollo__agency"
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "people",
+        "options": {}
+      },
+      "id": "split-people",
+      "name": "Split people",
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [640, 400]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Filtro: solo lead con email valida e azienda chiara\nconst items = $input.all();\nreturn items.filter(it => {\n  const p = it.json;\n  return p.email && p.email.includes('@') && p.organization && p.organization.name;\n}).map(it => {\n  const p = it.json;\n  return { json: {\n    full_name: p.name,\n    first_name: p.first_name,\n    last_name: p.last_name,\n    email: p.email,\n    title: p.title,\n    linkedin_url: p.linkedin_url,\n    company: p.organization.name,\n    company_website: p.organization.website_url,\n    company_size: p.organization.estimated_num_employees,\n    company_industry: p.organization.industry,\n    city: p.city,\n    country: p.country,\n    source: 'apollo',\n    fetched_at: new Date().toISOString()\n  }};\n});"
+      },
+      "id": "filter-normalize",
+      "name": "Filter & normalize",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [860, 400]
+    },
+    {
+      "parameters": {
+        "model": "claude-sonnet-4-6",
+        "messages": {
+          "messageValues": [
+            {
+              "role": "user",
+              "content": "=Sei un sales analyst per un'agenzia di automation B2B in Italia. Valuta questo lead per fit con la nostra offerta (automazioni n8n + AI per PMI italiane). Restituisci SOLO un JSON con questa shape:\n{\n  \"score\": 0-100,\n  \"reason\": \"breve motivazione in italiano (max 30 parole)\",\n  \"niche\": \"software-saas|agenzie|freelance|avvocati|commercialisti|altro\",\n  \"priority\": \"alta|media|bassa\"\n}\n\nLead:\nNome: {{ $json.full_name }}\nTitolo: {{ $json.title }}\nAzienda: {{ $json.company }}\nSettore: {{ $json.company_industry }}\nDimensione: {{ $json.company_size }} dipendenti\nWebsite: {{ $json.company_website }}\nCittà: {{ $json.city }}"
+            }
+          ]
+        },
+        "options": {
+          "maxTokens": 300,
+          "temperature": 0.2
+        }
+      },
+      "id": "ai-score",
+      "name": "AI Score (Claude)",
+      "type": "@n8n/n8n-nodes-langchain.anthropic",
+      "typeVersion": 1.3,
+      "position": [1080, 400],
+      "credentials": {
+        "anthropicApi": {
+          "id": "REPLACE_WITH_ANTHROPIC_CREDENTIAL_ID",
+          "name": "anthropic__agency"
+        }
+      },
+      "notes": "Output JSON parseato dal nodo successivo"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Estrai JSON dalla risposta del modello e mergia con il lead originale\nconst items = $input.all();\nreturn items.map(it => {\n  const lead = $('Filter & normalize').itemMatching(it.itemIndex || 0).json;\n  let parsed = { score: 0, reason: 'parse_error', niche: 'altro', priority: 'bassa' };\n  try {\n    const text = it.json.message?.content?.[0]?.text || it.json.text || it.json.content || '';\n    const match = text.match(/\\{[\\s\\S]*\\}/);\n    if (match) parsed = JSON.parse(match[0]);\n  } catch (e) {\n    parsed.reason = 'parse_error: ' + e.message;\n  }\n  return { json: { ...lead, ...parsed } };\n});"
+      },
+      "id": "parse-score",
+      "name": "Parse score",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1300, 400]
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "base": { "__rl": true, "value": "REPLACE_WITH_BASE_ID", "mode": "id" },
+        "table": { "__rl": true, "value": "leads", "mode": "name" },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "email": "={{ $json.email }}",
+            "full_name": "={{ $json.full_name }}",
+            "title": "={{ $json.title }}",
+            "linkedin_url": "={{ $json.linkedin_url }}",
+            "company": "={{ $json.company }}",
+            "company_website": "={{ $json.company_website }}",
+            "company_size": "={{ $json.company_size }}",
+            "company_industry": "={{ $json.company_industry }}",
+            "city": "={{ $json.city }}",
+            "country": "={{ $json.country }}",
+            "source": "={{ $json.source }}",
+            "fetched_at": "={{ $json.fetched_at }}",
+            "score": "={{ $json.score }}",
+            "score_reason": "={{ $json.reason }}",
+            "niche": "={{ $json.niche }}",
+            "priority": "={{ $json.priority }}",
+            "status": "new"
+          },
+          "matchingColumns": ["email"]
+        },
+        "options": {}
+      },
+      "id": "airtable-upsert",
+      "name": "Airtable · upsert lead",
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [1520, 400],
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "REPLACE_WITH_AIRTABLE_CREDENTIAL_ID",
+          "name": "airtable__agency"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Aggrega per il summary Telegram\nconst all = $input.all();\nconst total = all.length;\nconst hi = all.filter(i => (i.json.score || 0) >= 70).length;\nconst mid = all.filter(i => { const s = i.json.score || 0; return s >= 40 && s < 70; }).length;\nconst lo = all.filter(i => (i.json.score || 0) < 40).length;\nconst top = [...all].sort((a, b) => (b.json.score || 0) - (a.json.score || 0)).slice(0, 3)\n  .map(i => `• *${i.json.full_name}* (${i.json.company}) — score ${i.json.score} · ${i.json.priority}`)\n  .join('\\n');\nreturn [{ json: { total, hi, mid, lo, top } }];"
+      },
+      "id": "summarize",
+      "name": "Summarize",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1740, 400]
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $env.TELEGRAM_ADMIN_CHAT_IDS.split(',')[0] }}",
+        "text": "=🎯 *Lead-gen run completata*\n\nTotale: *{{ $json.total }}* lead\n• Score alto (≥70): *{{ $json.hi }}*\n• Score medio (40–69): *{{ $json.mid }}*\n• Score basso (<40): *{{ $json.lo }}*\n\n*Top 3:*\n{{ $json.top }}\n\nUsa /leads per dettagli.",
+        "additionalFields": { "parse_mode": "Markdown" }
+      },
+      "id": "telegram-notify",
+      "name": "Notify Telegram",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [1960, 400],
+      "credentials": {
+        "telegramApi": {
+          "id": "REPLACE_WITH_YOUR_TELEGRAM_CREDENTIAL_ID",
+          "name": "telegram__bot-agency"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Schedule (lun 9:00)": {
+      "main": [[{ "node": "Apollo · search people IT", "type": "main", "index": 0 }]]
+    },
+    "Apollo · search people IT": {
+      "main": [[{ "node": "Split people", "type": "main", "index": 0 }]]
+    },
+    "Split people": {
+      "main": [[{ "node": "Filter & normalize", "type": "main", "index": 0 }]]
+    },
+    "Filter & normalize": {
+      "main": [[{ "node": "AI Score (Claude)", "type": "main", "index": 0 }]]
+    },
+    "AI Score (Claude)": {
+      "main": [[{ "node": "Parse score", "type": "main", "index": 0 }]]
+    },
+    "Parse score": {
+      "main": [[{ "node": "Airtable · upsert lead", "type": "main", "index": 0 }]]
+    },
+    "Airtable · upsert lead": {
+      "main": [[{ "node": "Summarize", "type": "main", "index": 0 }]]
+    },
+    "Summarize": {
+      "main": [[{ "node": "Notify Telegram", "type": "main", "index": 0 }]]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "tags": [
+    { "name": "agency" },
+    { "name": "leadgen" },
+    { "name": "cron" },
+    { "name": "draft" }
+  ],
+  "meta": {
+    "description": "Workflow di riferimento: Apollo search persone B2B in Italia → filtro & normalize → AI scoring con Claude → upsert in Airtable → notifica Telegram. Da personalizzare con credenziali reali e base Airtable. Scheduling: lunedì ore 9:00."
+  }
+}
