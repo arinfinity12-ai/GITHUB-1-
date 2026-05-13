@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 @theme {
+  /* Dashboard tokens */
   --color-navy:        #1a1a2e;
   --color-navy-light:  #252545;
   --color-navy-border: #2e2e50;
@@ -8,7 +9,16 @@
   --color-gold-light:  #C4A052;
   --color-gold-dim:    rgba(168,132,58,0.15);
 
+  /* B2B Public Site tokens */
+  --color-black:       #0a0a0a;
+  --color-dark-1:      #111111;
+  --color-dark-2:      #161616;
+  --color-dark-border: #222222;
+  --color-gold-b2b:    #C9A84C;
+  --color-gold-b2b-l:  #d4b566;
+
   --font-display: 'Playfair Display', serif;
+  --font-heading: 'Syne', sans-serif;
   --font-body:    'Inter', sans-serif;
 }
 
@@ -52,6 +62,53 @@ body {
     linear-gradient(rgba(168,132,58,0.04) 1px, transparent 1px),
     linear-gradient(90deg, rgba(168,132,58,0.04) 1px, transparent 1px);
   background-size: 64px 64px;
+}
+
+/* ── B2B Public site utilities ─────────────────────────── */
+
+/* Gold text for B2B pages */
+.text-gold-b2b {
+  background: linear-gradient(135deg, #d4b566 0%, #C9A84C 50%, #a88530 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Card for B2B pages */
+.card-b2b {
+  background: #111111;
+  border: 1px solid #222222;
+  border-radius: 16px;
+  transition: border-color 0.25s, transform 0.25s;
+}
+.card-b2b:hover {
+  border-color: rgba(201,168,76,0.35);
+  transform: translateY(-2px);
+}
+
+/* CTA button gold */
+.btn-gold-b2b {
+  background: #C9A84C;
+  color: #0a0a0a;
+  font-weight: 700;
+  border-radius: 10px;
+  padding: 14px 28px;
+  font-size: 14px;
+  letter-spacing: 0.01em;
+  transition: filter 0.2s, transform 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-gold-b2b:hover { filter: brightness(1.1); transform: scale(1.02); }
+.btn-gold-b2b:active { transform: scale(0.98); }
+
+/* Subtle grid for B2B hero */
+.b2b-grid {
+  background-image:
+    linear-gradient(rgba(201,168,76,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,168,76,0.03) 1px, transparent 1px);
+  background-size: 80px 80px;
 }
 
 /* Noise texture overlay */

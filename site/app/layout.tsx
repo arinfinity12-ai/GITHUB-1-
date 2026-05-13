@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Playfair_Display, Inter } from 'next/font/google'
+import { Playfair_Display, Inter, Syne } from 'next/font/google'
 import './globals.css'
 
 const playfair = Playfair_Display({
@@ -9,6 +9,13 @@ const playfair = Playfair_Display({
   weight: ['400', '600', '700', '900'],
 })
 
+const syne = Syne({
+  subsets: ['latin'],
+  variable: '--font-heading',
+  display: 'swap',
+  weight: ['400', '500', '600', '700', '800'],
+})
+
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-body',
@@ -16,8 +23,8 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Atlas AI OS — Sistemi AI per imprenditori',
-  description: 'Automazione, AI e prodotti digitali integrati. Dal prototipo alla produzione.',
+  title: 'Atlas AI OS — Sistemi AI per imprenditori italiani',
+  description: 'Automazioni, pipeline commerciali e sistemi AI costruiti su misura. ROI misurabile dal primo mese.',
   openGraph: {
     title: 'Atlas AI OS',
     description: 'Sistemi AI costruiti per imprenditori ambiziosi.',
@@ -27,7 +34,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="it" className={`${playfair.variable} ${inter.variable}`}>
+    <html lang="it" className={`${playfair.variable} ${syne.variable} ${inter.variable}`}>
       <body>{children}</body>
     </html>
   )
