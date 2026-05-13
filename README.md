@@ -1,73 +1,100 @@
-# React + TypeScript + Vite
+# VideoEdit
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Editor video in-browser · FFmpeg.wasm · React 19 · Nessun backend**
 
-Currently, two official plugins are available:
+Taglia, unisci, converti e estrai audio direttamente nel browser, senza caricare nulla su server.
+Tutta l'elaborazione avviene client-side tramite FFmpeg compilato in WebAssembly.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Funzionalità
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Taglia** — seleziona il range con timeline interattiva ed esporta il clip
+- **Unisci** — carica più file e concatenali in un unico video MP4
+- **Converti formato** — converte in MP4, WebM, AVI o MOV
+- **Estrai audio** — estrae la traccia audio come file MP3
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Stack
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+| Tecnologia | Versione | Ruolo |
+|---|---|---|
+| React | 19 | UI framework |
+| TypeScript | 5 | Tipizzazione statica |
+| Vite | 8 | Build tool + dev server |
+| @ffmpeg/ffmpeg | 0.12 | FFmpeg.wasm (elaborazione video) |
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Nessun backend. Nessun database. Deploy come sito statico.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## Avvio rapido
+
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Apri `http://localhost:5173`. Il primo utilizzo di uno strumento scarica FFmpeg (~32 MB dal CDN).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Build produzione
+
+```bash
+npm run build
+npm run preview
 ```
+
+### Deploy su Vercel
+
+Aggiungere `vercel.json` con gli header obbligatori per WebAssembly:
+
+```json
+{
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Cross-Origin-Opener-Policy", "value": "same-origin" },
+        { "key": "Cross-Origin-Embedder-Policy", "value": "require-corp" }
+      ]
+    }
+  ]
+}
+```
+
+---
+
+## Architettura
+
+```
+src/
+├── hooks/
+│   └── useFFmpeg.ts        # Wrapper FFmpeg.wasm: load, trim, merge, extract, convert
+├── components/
+│   ├── TrimTool.tsx         # Timeline interattiva per il taglio
+│   ├── MergeTool.tsx        # Caricamento multiplo + concatenazione
+│   ├── ConvertTool.tsx      # Selezione formato di output
+│   ├── ExtractAudioTool.tsx # Estrazione audio one-click
+│   ├── VideoUploader.tsx    # Drag-and-drop file
+│   ├── VideoPlayer.tsx      # Player con seek bar e volume
+│   └── ProgressOverlay.tsx  # Overlay progress + log FFmpeg
+└── App.tsx                  # Orchestratore: stato globale, routing tool
+```
+
+---
+
+## Note browser
+
+- Richiede un **contesto sicuro**: HTTPS in produzione oppure `localhost` in sviluppo.
+- Gli header `Cross-Origin-Opener-Policy` e `Cross-Origin-Embedder-Policy` sono necessari
+  per abilitare `SharedArrayBuffer`, usato internamente da FFmpeg.wasm.
+- Testato su Chrome 120+, Firefox 121+, Safari 17+.
+
+---
+
+## Parte di Atlas AI OS
+
+Progetto di [Riccardo Piombino](https://github.com/arinfinity12-ai) — Atlas AI OS.
