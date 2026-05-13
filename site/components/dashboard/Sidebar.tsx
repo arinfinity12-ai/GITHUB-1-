@@ -5,10 +5,28 @@ import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
 
-const navItems = [
-  { href: '/dashboard',        label: 'Overview',    icon: '◈' },
-  { href: '/dashboard/tools',  label: 'Tools',       icon: '⚡' },
-  { href: '/dashboard/about',  label: 'Chi sono',    icon: '◎' },
+const navSections = [
+  {
+    label: 'Overview',
+    items: [
+      { href: '/dashboard',             label: 'Dashboard',  icon: '◈' },
+      { href: '/dashboard/tools',       label: 'Tools',      icon: '⚡' },
+    ],
+  },
+  {
+    label: 'Business',
+    items: [
+      { href: '/dashboard/revenue',     label: 'Revenue',    icon: '$' },
+      { href: '/dashboard/pipeline',    label: 'Pipeline',   icon: '◎' },
+      { href: '/dashboard/clients',     label: 'Clienti',    icon: '⬡' },
+    ],
+  },
+  {
+    label: 'Profilo',
+    items: [
+      { href: '/dashboard/about',       label: 'Chi sono',   icon: '◉' },
+    ],
+  },
 ]
 
 /* Sidebar dashboard con drawer mobile */
@@ -32,34 +50,44 @@ export function DashboardSidebar() {
         </Link>
       </div>
 
-      {/* Nav */}
-      <nav className="flex-1 px-3 py-5 space-y-0.5">
-        {navItems.map((item) => {
-          const active = pathname === item.href
-          return (
-            <Link
-              key={item.href}
-              href={item.href}
-              onClick={() => setOpen(false)}
-              className={[
-                'relative flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm transition-all duration-200',
-                active
-                  ? 'text-white bg-[#252545]'
-                  : 'text-white/45 hover:text-white/80 hover:bg-[#252545]/50',
-              ].join(' ')}
-              style={{ fontFamily: 'var(--font-body)' }}
-            >
-              {active && (
-                <motion.span
-                  layoutId="dash-active"
-                  className="absolute left-0 top-1/2 -translate-y-1/2 w-0.5 h-5 rounded-full bg-[#A8843A]"
-                />
-              )}
-              <span className="text-base w-5 text-center shrink-0">{item.icon}</span>
-              {item.label}
-            </Link>
-          )
-        })}
+      {/* Nav con sezioni */}
+      <nav className="flex-1 px-3 py-4 overflow-y-auto space-y-4">
+        {navSections.map((section) => (
+          <div key={section.label}>
+            <p className="text-[9px] font-bold tracking-widest uppercase text-white/20 px-3 mb-1"
+              style={{ fontFamily: 'var(--font-body)' }}>
+              {section.label}
+            </p>
+            <div className="space-y-0.5">
+              {section.items.map((item) => {
+                const active = pathname === item.href
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    onClick={() => setOpen(false)}
+                    className={[
+                      'relative flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm transition-all duration-200',
+                      active
+                        ? 'text-white bg-[#252545]'
+                        : 'text-white/45 hover:text-white/80 hover:bg-[#252545]/50',
+                    ].join(' ')}
+                    style={{ fontFamily: 'var(--font-body)' }}
+                  >
+                    {active && (
+                      <motion.span
+                        layoutId="dash-active"
+                        className="absolute left-0 top-1/2 -translate-y-1/2 w-0.5 h-5 rounded-full bg-[#A8843A]"
+                      />
+                    )}
+                    <span className="text-sm w-5 text-center shrink-0 font-mono">{item.icon}</span>
+                    {item.label}
+                  </Link>
+                )
+              })}
+            </div>
+          </div>
+        ))}
       </nav>
 
       {/* User info footer */}
