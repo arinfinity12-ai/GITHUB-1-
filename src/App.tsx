@@ -5,16 +5,18 @@ import { MergeTool } from './components/MergeTool'
 import { ConvertTool } from './components/ConvertTool'
 import { ExtractAudioTool } from './components/ExtractAudioTool'
 import { ProgressOverlay } from './components/ProgressOverlay'
+import { TrelloView } from './components/TrelloView'
 import { useFFmpeg } from './hooks/useFFmpeg'
 import './App.css'
 
-type Tool = 'trim' | 'merge' | 'convert' | 'extract'
+type Tool = 'trim' | 'merge' | 'convert' | 'extract' | 'trello'
 
 const tools: { id: Tool; label: string; icon: string; needsFile: boolean }[] = [
   { id: 'trim', label: 'Trim', icon: '✂️', needsFile: true },
   { id: 'merge', label: 'Merge', icon: '🔗', needsFile: false },
   { id: 'convert', label: 'Convert', icon: '🔄', needsFile: true },
   { id: 'extract', label: 'Extract Audio', icon: '🎵', needsFile: true },
+  { id: 'trello', label: 'Trello', icon: '📋', needsFile: false },
 ]
 
 function downloadBlob(blob: Blob, filename: string) {
@@ -195,7 +197,7 @@ export default function App() {
             </div>
           )}
 
-          {currentTool.needsFile && !file ? (
+          {currentTool.needsFile && !file && selectedTool !== 'trello' ? (
             <div className="upload-gate">
               <VideoUploader onFileSelect={handleFileSelect} />
             </div>
@@ -213,10 +215,13 @@ export default function App() {
               {selectedTool === 'extract' && file && srcUrl && (
                 <ExtractAudioTool file={file} srcUrl={srcUrl} onExtract={handleExtract} processing={processing} />
               )}
+              {selectedTool === 'trello' && (
+                <TrelloView resultBlob={resultBlob} resultFilename={resultFilename} />
+              )}
             </>
           )}
 
-          {resultUrl && resultBlob && (
+          {resultUrl && resultBlob && selectedTool !== 'trello' && (
             <div className="result-panel">
               <h3 className="result-title">Result Ready</h3>
               {resultBlob.type.startsWith('video/') && (
@@ -225,12 +230,20 @@ export default function App() {
               {resultBlob.type.startsWith('audio/') && (
                 <audio src={resultUrl} controls className="result-audio" />
               )}
-              <button
-                className="btn btn-success"
-                onClick={() => downloadBlob(resultBlob, resultFilename)}
-              >
-                &#8681; Download {resultFilename}
-              </button>
+              <div className="result-actions">
+                <button
+                  className="btn btn-success"
+                  onClick={() => downloadBlob(resultBlob, resultFilename)}
+                >
+                  &#8681; Download {resultFilename}
+                </button>
+                <button
+                  className="btn btn-trello"
+                  onClick={() => setSelectedTool('trello')}
+                >
+                  📋 Salva su Trello
+                </button>
+              </div>
             </div>
           )}
         </main>
