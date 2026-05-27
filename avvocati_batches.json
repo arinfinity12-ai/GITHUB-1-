@@ -1,0 +1,2342 @@
+[
+  [
+    {
+      "id": "54a3004c7468692e71350d4d",
+      "first_name": "Mario",
+      "organization_name": "FDL Studio legale"
+    },
+    {
+      "id": "54a561c07468692cf0c69d93",
+      "first_name": "Nicola",
+      "organization_name": "Laward - Avvocati Associati"
+    },
+    {
+      "id": "6251db4ddc35590001e9a3ef",
+      "first_name": "Mayya",
+      "organization_name": "Bovesi And Partners"
+    },
+    {
+      "id": "57d81e2fa6da9809c6edff4c",
+      "first_name": "Alessandra",
+      "organization_name": "Visconti Law Firm"
+    },
+    {
+      "id": "5f0187929567de0001429fa7",
+      "first_name": "Francesco",
+      "organization_name": "LegisLAB"
+    },
+    {
+      "id": "66ffff3fb3fb56000169faa8",
+      "first_name": "Gianni",
+      "organization_name": "act legal Italy"
+    },
+    {
+      "id": "54a4e4397468692fa2dee16b",
+      "first_name": "Alberto",
+      "organization_name": "EXP Legal"
+    },
+    {
+      "id": "601854b291b9790001d78d7b",
+      "first_name": "Matteo",
+      "organization_name": "RLS studio legale associato"
+    },
+    {
+      "id": "5ae1bae4a6da984d14ba08b9",
+      "first_name": "Marcella",
+      "organization_name": "MILITERNI Law Firm"
+    },
+    {
+      "id": "642ffb6177420f00013b1242",
+      "first_name": "Paola",
+      "organization_name": "Adamo & Partners - Studio Legale"
+    }
+  ],
+  [
+    {
+      "id": "54a473637468693b8c8a2a48",
+      "first_name": "Fabiana",
+      "organization_name": "LEGALIT - Societ\u00e0 tra Avvocati S.r.l."
+    },
+    {
+      "id": "636e605b9973720001cd01e3",
+      "first_name": "Saverio",
+      "organization_name": "Studio Legale Gatto"
+    },
+    {
+      "id": "54a3b6847468693676d8b30c",
+      "first_name": "Rodolfo",
+      "organization_name": "Studio Legale Grompe Redaelli e Associati - Studio GRA"
+    },
+    {
+      "id": "635998191d00ba000140f740",
+      "first_name": "Dario",
+      "organization_name": "Schettini Law Firm"
+    },
+    {
+      "id": "5aa3885ea6da98424303ded2",
+      "first_name": "Martina",
+      "organization_name": "Legalab Studio Legale"
+    },
+    {
+      "id": "54c1a3437468691639a9d12d",
+      "first_name": "Antonio",
+      "organization_name": "Koin\u00e9 societ\u00e0 tra avvocati s.r.l."
+    },
+    {
+      "id": "54abd4087468692a6bb9f70f",
+      "first_name": "Massimo",
+      "organization_name": "Studio Legale Liconti Galliano Villa e Associati"
+    },
+    {
+      "id": "54c1b7e27468691639890c3b",
+      "first_name": "Nicola",
+      "organization_name": "Studio Legale"
+    },
+    {
+      "id": "5d5f3a67f65125739f732556",
+      "first_name": "Federica",
+      "organization_name": "Studio Legale"
+    },
+    {
+      "id": "54a9982d7468693399ff2115",
+      "first_name": "Luigi",
+      "organization_name": "Studio Legale"
+    }
+  ],
+  [
+    {
+      "id": "55707127736964524f0b3400",
+      "first_name": "Chiara",
+      "organization_name": "RASS - Studio Legale Rinaldi e Associati"
+    },
+    {
+      "id": "57dbcf12a6da98686b29ca8f",
+      "first_name": "Marco",
+      "organization_name": "Studio Legale"
+    },
+    {
+      "id": "54aaf87d7468690b75abe11c",
+      "first_name": "Marco",
+      "organization_name": "Studio Legale"
+    },
+    {
+      "id": "54c1ea4d7468697af73bd35c",
+      "first_name": "Stefano",
+      "organization_name": "B-right Lawyers"
+    },
+    {
+      "id": "57d79cdda6da980a0e7058cf",
+      "first_name": "Paolo",
+      "organization_name": "Studio Legale"
+    },
+    {
+      "id": "54a5c2507468692abfde1da6",
+      "first_name": "Avv",
+      "organization_name": "Studio Legale"
+    },
+    {
+      "id": "54a961cb74686930ad21e411",
+      "first_name": "Francesco",
+      "organization_name": "Studio Legale"
+    },
+    {
+      "id": "54a489ba7468692cf0534b4f",
+      "first_name": "Laura",
+      "organization_name": "Studio Legale"
+    },
+    {
+      "id": "5dcdf1c9a114fd000106a82d",
+      "first_name": "Ferdinando",
+      "organization_name": "Studio Legale"
+    },
+    {
+      "id": "6129dd528872d10001816de9",
+      "first_name": "Emanuele",
+      "organization_name": "FDL Studio legale"
+    }
+  ],
+  [
+    {
+      "id": "54a7553274686975f8430f2b",
+      "first_name": "Chiara",
+      "organization_name": "Princivalle Apruzzi Danielli | Studio Legale"
+    },
+    {
+      "id": "54a580137468693442d70a99",
+      "first_name": "Anna",
+      "organization_name": "Studio Legale Lauro"
+    },
+    {
+      "id": "5d4c474af65125683eb16ad1",
+      "first_name": "Avv",
+      "organization_name": "Studio NL Avvocati & Commercialisti"
+    },
+    {
+      "id": "54fa74237468695e4944ab00",
+      "first_name": "Matteo",
+      "organization_name": "Studio d'Avvocato"
+    },
+    {
+      "id": "54a620a07468692fa2feaac4",
+      "first_name": "Romina",
+      "organization_name": "Studio Legale"
+    },
+    {
+      "id": "641abfa6bed4ac00018471e1",
+      "first_name": "Luca",
+      "organization_name": "Di Gravio Avvocati"
+    },
+    {
+      "id": "557142047369642119500000",
+      "first_name": "Stefano",
+      "organization_name": "Studio Legale Sollazzo Zucc\u00e0la"
+    },
+    {
+      "id": "5f5199b50ada1c0001c5d1ec",
+      "first_name": "Umberto",
+      "organization_name": "Studio Legale Borgiani Parisella e Associati"
+    },
+    {
+      "id": "65e015b18f9cb2000125021a",
+      "first_name": "Antonio",
+      "organization_name": "RAINONE LAW FIRM"
+    },
+    {
+      "id": "61386e3b95fbbe0001d9f592",
+      "first_name": "Federica",
+      "organization_name": "Studio Legale Sollazzo Zucc\u00e0la"
+    }
+  ],
+  [
+    {
+      "id": "57e138cfa6da987dace193c3",
+      "first_name": "Gloriana",
+      "organization_name": "RAINONE LAW FIRM"
+    },
+    {
+      "id": "5f5ad541bd2cd70001af990d",
+      "first_name": "Luca",
+      "organization_name": "SLCD - Legal & Corporate Advisors"
+    },
+    {
+      "id": "66ee70deb077bb0001069dee",
+      "first_name": "Ludovica",
+      "organization_name": "RAINONE LAW FIRM"
+    },
+    {
+      "id": "54a7ffc774686975f8ead35b",
+      "first_name": "Carlotta",
+      "organization_name": "SLC - Milan Law Firm"
+    },
+    {
+      "id": "65701b1d25c495000190dc02",
+      "first_name": "Ilaria",
+      "organization_name": "L2B Partners"
+    },
+    {
+      "id": "57d491dba6da9853a0a2d74e",
+      "first_name": "Ivana",
+      "organization_name": "RAINONE LAW FIRM"
+    },
+    {
+      "id": "54a3cc7274686938acdce913",
+      "first_name": "Eugenio",
+      "organization_name": "Studio Legale Caputo e Associati"
+    },
+    {
+      "id": "69673e09c6b48800012b4a21",
+      "first_name": "Gloria",
+      "organization_name": "RAINONE LAW FIRM"
+    },
+    {
+      "id": "5fd594bbbcc1b00001f65649",
+      "first_name": "Francesca",
+      "organization_name": "Zaccaria Rotella & Associati"
+    },
+    {
+      "id": "61b49eaaa8ba5400014ac40b",
+      "first_name": "Luisa",
+      "organization_name": "Alfa Legal"
+    }
+  ],
+  [
+    {
+      "id": "57e0a6d8a6da981c5ddc47db",
+      "first_name": "Hanz",
+      "organization_name": "LAWTELIER Avvocati Associati"
+    },
+    {
+      "id": "54a829317468696829a29563",
+      "first_name": "Valentina",
+      "organization_name": "Studio Legale de' Sanna Pirovano"
+    },
+    {
+      "id": "636e616ae0df7700018801ae",
+      "first_name": "Sindi",
+      "organization_name": "Laward - Avvocati Associati"
+    },
+    {
+      "id": "5ac800eda6da984083b36de4",
+      "first_name": "Elettra",
+      "organization_name": "Laward - Avvocati Associati"
+    },
+    {
+      "id": "57da3b98a6da984a9c323b20",
+      "first_name": "Alberto",
+      "organization_name": "MILITERNI Law Firm"
+    },
+    {
+      "id": "55709f7e73696426d5450800",
+      "first_name": "Paolo",
+      "organization_name": "ERGON LEGAL"
+    },
+    {
+      "id": "57dfddc2a6da980b1dde66d9",
+      "first_name": "Francesca",
+      "organization_name": "VILLA & Associati"
+    },
+    {
+      "id": "54a62e9d7468692fa2dc29c9",
+      "first_name": "Patrizia",
+      "organization_name": "Frignani Virano e Associati"
+    },
+    {
+      "id": "5d687244f651251c5eb01f26",
+      "first_name": "Veronica",
+      "organization_name": "ALLEGAL - Studio Legale Associato | Law firm"
+    },
+    {
+      "id": "60c28d75a01d3800010f8696",
+      "first_name": "Francesca",
+      "organization_name": "ALLEGAL - Studio Legale Associato | Law firm"
+    }
+  ],
+  [
+    {
+      "id": "57d7c97fa6da9809ce6fc43b",
+      "first_name": "Daniela",
+      "organization_name": "ALLEGAL - Studio Legale Associato | Law firm"
+    },
+    {
+      "id": "6125662bc9f0f200012b0b59",
+      "first_name": "Fabrizio",
+      "organization_name": "Genesis Avvocati"
+    },
+    {
+      "id": "68e28e220863a0000145a201",
+      "first_name": "Martina",
+      "organization_name": "Agnoli Law"
+    },
+    {
+      "id": "63fca622fce40000014e9583",
+      "first_name": "Michela",
+      "organization_name": "MGG LAW FIRM"
+    },
+    {
+      "id": "5f72d9cc0ff7c90001f5976f",
+      "first_name": "Camilla",
+      "organization_name": "MGG LAW FIRM"
+    },
+    {
+      "id": "6426eee5ba18c5000195afb2",
+      "first_name": "Pietro",
+      "organization_name": "MGG LAW FIRM"
+    },
+    {
+      "id": "57d861ada6da987817802332",
+      "first_name": "Martina",
+      "organization_name": "TmdpLex studio legale"
+    },
+    {
+      "id": "634a75e0305b56000157a098",
+      "first_name": "Eleonora",
+      "organization_name": "MGG LAW FIRM"
+    },
+    {
+      "id": "54a2b9a074686930c2263738",
+      "first_name": "Francesca",
+      "organization_name": "MGG LAW FIRM"
+    },
+    {
+      "id": "5f4a2799f7a0730001dd4c99",
+      "first_name": "Artea",
+      "organization_name": "MGG LAW FIRM"
+    }
+  ],
+  [
+    {
+      "id": "642470928bf8cd0001229562",
+      "first_name": "Adriano",
+      "organization_name": "MGG LAW FIRM"
+    },
+    {
+      "id": "6321bb881513d500014b09f1",
+      "first_name": "Alessia",
+      "organization_name": "MGG LAW FIRM"
+    },
+    {
+      "id": "64a7f29a50b7f20001da8fa8",
+      "first_name": "Angelo",
+      "organization_name": "TmdpLex studio legale"
+    },
+    {
+      "id": "6353cd249568c20001d812a6",
+      "first_name": "Tommaso",
+      "organization_name": "MGG LAW FIRM"
+    },
+    {
+      "id": "57d901b2a6da98721a9e58a1",
+      "first_name": "Roberta",
+      "organization_name": "MGG LAW FIRM"
+    },
+    {
+      "id": "61990828b9ac9c00014ea9a9",
+      "first_name": "Alessandra",
+      "organization_name": "MILITERNI Law Firm"
+    },
+    {
+      "id": "6125e5fa8ed2f70001ef0f8a",
+      "first_name": "Edoardo",
+      "organization_name": "MGG LAW FIRM"
+    },
+    {
+      "id": "6870a4a469e3b90001a5ac68",
+      "first_name": "Francesca",
+      "organization_name": "MGG LAW FIRM"
+    },
+    {
+      "id": "61f55f473893340001a0b1bb",
+      "first_name": "Teresa",
+      "organization_name": "MILITERNI Law Firm"
+    },
+    {
+      "id": "6359fa335ccec9000125f520",
+      "first_name": "Ilaria",
+      "organization_name": "Studio Legale Dindo, Zorzi e Associati"
+    }
+  ],
+  [
+    {
+      "id": "57dd9ba5a6da987b65e595a6",
+      "first_name": "Lucia",
+      "organization_name": "PLLC LEGAL"
+    },
+    {
+      "id": "6662a82a03c624000174f327",
+      "first_name": "Raffaella",
+      "organization_name": "MILITERNI Law Firm"
+    },
+    {
+      "id": "54a6e4967468696b7f85cf01",
+      "first_name": "Fabio",
+      "organization_name": "ESG Lex"
+    },
+    {
+      "id": "57dff05ea6da980b4a0c1b3e",
+      "first_name": "Michele",
+      "organization_name": "TmdpLex studio legale"
+    },
+    {
+      "id": "612a73ef7bc8070001561aac",
+      "first_name": "Paolo",
+      "organization_name": "ELEXI Studio Legale"
+    },
+    {
+      "id": "664dd0fe98b1ea0001115f8f",
+      "first_name": "Ottavia",
+      "organization_name": "SLC - Law Firm"
+    },
+    {
+      "id": "54a263717468693cdd01251f",
+      "first_name": "Stefano",
+      "organization_name": "FDL Studio legale"
+    },
+    {
+      "id": "57dfad3ea6da980b4a0a8fb6",
+      "first_name": "Emanuele",
+      "organization_name": "Athena Law Firm"
+    },
+    {
+      "id": "54a535e67468692abf8af485",
+      "first_name": "Alessandro",
+      "organization_name": "A Legal - Studio Legale Integrato"
+    },
+    {
+      "id": "65e00f3c6b2b580001a8b0ff",
+      "first_name": "Graziano",
+      "organization_name": "CdB Avvocati Law Firm"
+    }
+  ],
+  [
+    {
+      "id": "5e67f978fd80cf0001ff2b8e",
+      "first_name": "Lorenzo",
+      "organization_name": "Studio Legale Frisina- Associazione Professionale"
+    },
+    {
+      "id": "663b2561b0407a0001a28c65",
+      "first_name": "Andrea",
+      "organization_name": "CdB Avvocati Law Firm"
+    },
+    {
+      "id": "57d8cddaa6da98723a155fd0",
+      "first_name": "Francesco",
+      "organization_name": "Prestige Legal & Advisory"
+    },
+    {
+      "id": "54ec233574686943111f6957",
+      "first_name": "Francesca",
+      "organization_name": "L.F.I. Fiorillo & Partners Societ\u00e0 tra Avvocati r.l."
+    },
+    {
+      "id": "5e8721de42387f0001c9997e",
+      "first_name": "Enzo",
+      "organization_name": "IOOS Studio Legale e Tributario"
+    },
+    {
+      "id": "5e6fa5c99ef2a10001177244",
+      "first_name": "Diego",
+      "organization_name": "RLS studio legale associato"
+    },
+    {
+      "id": "66a75267098d46000192c6da",
+      "first_name": "Paola",
+      "organization_name": "Studio Peluso Avvocati"
+    },
+    {
+      "id": "5dcfc4f80ebc7b000163b5c4",
+      "first_name": "Luigi",
+      "organization_name": "ELLED - Scordino De Bellis Law Firm"
+    },
+    {
+      "id": "679b226ae28b9c000141b76a",
+      "first_name": "Maria",
+      "organization_name": "Princivalle Apruzzi Danielli | Studio Legale"
+    },
+    {
+      "id": "57e1b22fa6da985717067bb0",
+      "first_name": "Rossella",
+      "organization_name": "RLS studio legale associato"
+    }
+  ],
+  [
+    {
+      "id": "5adcf540a6da98629fe6fa0f",
+      "first_name": "Emilio",
+      "organization_name": "Visconti Law Firm"
+    },
+    {
+      "id": "54a762027468696de76d6e2f",
+      "first_name": "Matteo",
+      "organization_name": "LAWTELIER Avvocati Associati"
+    },
+    {
+      "id": "55703c5a73696435808abc00",
+      "first_name": "Pietro",
+      "organization_name": "Studio Legale OBERT dal 1895"
+    },
+    {
+      "id": "57e100a4a6da987d5c3ce62d",
+      "first_name": "Valentina",
+      "organization_name": "BussolettiNuzzo Avvocati"
+    },
+    {
+      "id": "57d5ea66a6da983a12ad80b4",
+      "first_name": "Lorenza",
+      "organization_name": "FDL Studio legale"
+    },
+    {
+      "id": "612a49208bd06b00010c6f2d",
+      "first_name": "Sergio",
+      "organization_name": "Visconti Law Firm"
+    },
+    {
+      "id": "54a27e2574686935beca0027",
+      "first_name": "Marco",
+      "organization_name": "Advais S.t.a.p.A."
+    },
+    {
+      "id": "54a5d2b574686936768706ab",
+      "first_name": "Marco",
+      "organization_name": "FDL Studio legale"
+    },
+    {
+      "id": "5ddfb2ae3e409d0001743f72",
+      "first_name": "Carlo",
+      "organization_name": "Franco Baudino e Associati"
+    },
+    {
+      "id": "57d6f914a6da986ad9598f99",
+      "first_name": "Stefania",
+      "organization_name": "ALBE' E ASSOCIATI STUDIO LEGALE"
+    }
+  ],
+  [
+    {
+      "id": "54a4d8697468693209faa467",
+      "first_name": "Raffaele",
+      "organization_name": "Studio Legale Sepe"
+    },
+    {
+      "id": "57e1b91fa6da9856d2935143",
+      "first_name": "Marta",
+      "organization_name": "LexAlliance"
+    },
+    {
+      "id": "5dd1e5a97de46d000168efc2",
+      "first_name": "Francesco",
+      "organization_name": "Ceccarelli & Silvestri Boutique Law Firm"
+    },
+    {
+      "id": "5e6e4e41ee91f30001cd620d",
+      "first_name": "Marco",
+      "organization_name": "Visconti Law Firm"
+    },
+    {
+      "id": "636cfefa20e91e0001a3b47b",
+      "first_name": "Manuela",
+      "organization_name": "FDL Studio legale"
+    },
+    {
+      "id": "6490570247fbc2000174a7de",
+      "first_name": "Alessandra",
+      "organization_name": "M&P MognonPartners - Studio Legale"
+    },
+    {
+      "id": "613b02191e9a2900015923f3",
+      "first_name": "Alessandro",
+      "organization_name": "Agnoli Law"
+    },
+    {
+      "id": "55c53f587369644501cd0700",
+      "first_name": "Davide",
+      "organization_name": "Belloni Studio Legale"
+    },
+    {
+      "id": "652d09688065910001b5e939",
+      "first_name": "Luisa",
+      "organization_name": "FairWise"
+    },
+    {
+      "id": "5e7fbad125d7a000013795f5",
+      "first_name": "Alberto",
+      "organization_name": "FDL Studio legale"
+    }
+  ],
+  [
+    {
+      "id": "54a3a3c574686938ac5d0e07",
+      "first_name": "Roberto",
+      "organization_name": "RAINONE LAW FIRM"
+    },
+    {
+      "id": "69f973070f410d0001bbd90e",
+      "first_name": "Adriana",
+      "organization_name": "Agnoli Law"
+    },
+    {
+      "id": "655868dc1e2fa1000197d4ff",
+      "first_name": "Alessandro",
+      "organization_name": "ALLEGAL - Studio Legale Associato | Law firm"
+    },
+    {
+      "id": "5f06ec12ecf40e00015b07b6",
+      "first_name": "Carol",
+      "organization_name": "Ceccarelli & Silvestri Boutique Law Firm"
+    },
+    {
+      "id": "61f01af5fb559c00019ef675",
+      "first_name": "Nicolas",
+      "organization_name": "Ceccarelli & Silvestri Boutique Law Firm"
+    },
+    {
+      "id": "5e68914d014b6e000122ef99",
+      "first_name": "Adele",
+      "organization_name": "RAINONE LAW FIRM"
+    },
+    {
+      "id": "636d210859541e000152f5f0",
+      "first_name": "Romina",
+      "organization_name": "BLF Studio Legale"
+    },
+    {
+      "id": "6359364418d0ff00011c360d",
+      "first_name": "Gloria",
+      "organization_name": "Studio Legale Alpeggiani"
+    },
+    {
+      "id": "57e01cf0a6da980b02510115",
+      "first_name": "Angela",
+      "organization_name": "Studio Legale Roda"
+    },
+    {
+      "id": "54a1b75974686945fa5d7b0a",
+      "first_name": "Mindaugas",
+      "organization_name": "AG Invest law firm"
+    }
+  ],
+  [
+    {
+      "id": "5e8e81bc8c25a800015afc7e",
+      "first_name": "Luca",
+      "organization_name": "SLC - Milan Law Firm"
+    },
+    {
+      "id": "68ddbaa647f8100001c4af62",
+      "first_name": "Mariangela",
+      "organization_name": "Greco Vitali Associati - Studio Legale"
+    },
+    {
+      "id": "5f5e3630061a89000137e39d",
+      "first_name": "Paola",
+      "organization_name": "SLC - Milan Law Firm"
+    },
+    {
+      "id": "61bc281b068f7900016dc1d2",
+      "first_name": "Federica",
+      "organization_name": "SLC - Milan Law Firm"
+    },
+    {
+      "id": "5cdc07f580f93ebe610a3aad",
+      "first_name": "Roberto",
+      "organization_name": "SLC - Milan Law Firm"
+    },
+    {
+      "id": "6425deea51df7200010962d2",
+      "first_name": "Lorenzo",
+      "organization_name": "Greco Vitali Associati - Studio Legale"
+    },
+    {
+      "id": "685cc82573644100017f3e2e",
+      "first_name": "Barbara",
+      "organization_name": "Studio Legale"
+    },
+    {
+      "id": "68c2726eeea95e000109f3e4",
+      "first_name": "Sofia",
+      "organization_name": "PLLC LEGAL"
+    },
+    {
+      "id": "6651fe64f1e7ef0001d047a7",
+      "first_name": "Gaetano",
+      "organization_name": "BLF Studio Legale"
+    },
+    {
+      "id": "57d988d6a6da9872729f2164",
+      "first_name": "Gennaro",
+      "organization_name": "Studio Legale Falco"
+    }
+  ],
+  [
+    {
+      "id": "63206e69031a8f0001a38f3b",
+      "first_name": "Sebastiano",
+      "organization_name": "Greco Vitali Associati - Studio Legale"
+    },
+    {
+      "id": "62750eee9887960001c4592d",
+      "first_name": "Alberto",
+      "organization_name": "MADlex - Musumeci, Altara, Desana & Associati"
+    },
+    {
+      "id": "54a704c77468696b7fb59b0d",
+      "first_name": "Valentina",
+      "organization_name": "Agnoli Law"
+    },
+    {
+      "id": "57db2e42a6da984bb8bb4170",
+      "first_name": "Claudia",
+      "organization_name": "ERGON LEGAL"
+    },
+    {
+      "id": "5e8885e2397a140001765ab3",
+      "first_name": "Francesca",
+      "organization_name": "Caiazzo Donnini Pappalardo & Associati"
+    },
+    {
+      "id": "612a1574763b830001de6c4d",
+      "first_name": "Antonio",
+      "organization_name": "Pavan - Law Firm"
+    },
+    {
+      "id": "634a5309b7d1810001f250ac",
+      "first_name": "Andrea",
+      "organization_name": "EO Legal"
+    },
+    {
+      "id": "57d8b8eda6da98721a9ab8ec",
+      "first_name": "Luca",
+      "organization_name": "Pavan - Law Firm"
+    },
+    {
+      "id": "5dcf25afcfee2400017719a5",
+      "first_name": "Fellipe",
+      "organization_name": "Boccadutri International Law Firm"
+    },
+    {
+      "id": "5571314a7369645ed1280d00",
+      "first_name": "Vincenzo",
+      "organization_name": "Studio Legale Ascone Poltronieri Mulato & Partners"
+    }
+  ],
+  [
+    {
+      "id": "5e74ed8f4a4da6000163acc9",
+      "first_name": "Fabrizio",
+      "organization_name": "DFZ Law Firms"
+    },
+    {
+      "id": "61997c98d8574000014e3aaa",
+      "first_name": "Gianluca",
+      "organization_name": "Agnoli Law"
+    },
+    {
+      "id": "5d5da53d80f93e5d03a1ce19",
+      "first_name": "Walter",
+      "organization_name": "Flag Legal"
+    },
+    {
+      "id": "5d6030f4a3ae611cb8d1568a",
+      "first_name": "Laura",
+      "organization_name": "NPA - studio legale"
+    },
+    {
+      "id": "60800dccab832f0001dd1960",
+      "first_name": "Marco",
+      "organization_name": "Studio Legale Maltoni Associato"
+    },
+    {
+      "id": "614ecfd904589c000158c67f",
+      "first_name": "Armando",
+      "organization_name": "Flag Legal"
+    },
+    {
+      "id": "5d51518280f93e0939fd59d2",
+      "first_name": "Alessandra",
+      "organization_name": "VILLA & Associati"
+    },
+    {
+      "id": "626b8d7536f656000112f8d6",
+      "first_name": "Michela",
+      "organization_name": "Stanchi Studio Legale"
+    },
+    {
+      "id": "642ed770fa6fcc0001ef5290",
+      "first_name": "Giorgia",
+      "organization_name": "Studio Legale Caputo e Associati"
+    },
+    {
+      "id": "642acc5af54afe0001cd297c",
+      "first_name": "Serena",
+      "organization_name": "ALLEGAL - Studio Legale Associato | Law firm"
+    }
+  ],
+  [
+    {
+      "id": "642c127bdcc3a10001429aa7",
+      "first_name": "Sofia",
+      "organization_name": "VILLA & Associati"
+    },
+    {
+      "id": "54a775567468696b7f085a36",
+      "first_name": "Federico",
+      "organization_name": "Studio Legale"
+    },
+    {
+      "id": "5f6c4adbf9890e0001ac4adc",
+      "first_name": "Giada",
+      "organization_name": "VILLA & Associati"
+    },
+    {
+      "id": "628313c913b2550001bbde39",
+      "first_name": "Mattia",
+      "organization_name": "VILLA & Associati"
+    },
+    {
+      "id": "55cc1020f3e5bb4a040016d9",
+      "first_name": "Roberto",
+      "organization_name": "Boursier Niutta & Partners"
+    },
+    {
+      "id": "61507b0b0af4cb0001709a83",
+      "first_name": "Francesco",
+      "organization_name": "TmdpLex studio legale"
+    },
+    {
+      "id": "66471b85a256ea000112cef0",
+      "first_name": "Francesca",
+      "organization_name": "act legal Italy"
+    },
+    {
+      "id": "6422ddb96c69580001a2e8c3",
+      "first_name": "Virginia",
+      "organization_name": "act legal Italy"
+    },
+    {
+      "id": "5e765d08fc21cb0001c4a883",
+      "first_name": "Sabino",
+      "organization_name": "TmdpLex studio legale"
+    },
+    {
+      "id": "54ebcd6674686943111c9a28",
+      "first_name": "Massimo",
+      "organization_name": "Studio Legale"
+    }
+  ],
+  [
+    {
+      "id": "62941ee88fffcb000104e745",
+      "first_name": "Annapaola",
+      "organization_name": "TmdpLex studio legale"
+    },
+    {
+      "id": "5f5ef80a4358870001f699e6",
+      "first_name": "Saverio",
+      "organization_name": "Key Law - Studio Legale"
+    },
+    {
+      "id": "57d9781fa6da98722a864156",
+      "first_name": "Laura",
+      "organization_name": "PLLC LEGAL"
+    },
+    {
+      "id": "54ab53287468690ae67fb402",
+      "first_name": "Chiara",
+      "organization_name": "Studio Legale"
+    },
+    {
+      "id": "6355332c4e147c00018f187d",
+      "first_name": "Eleonora",
+      "organization_name": "Laroma Jezzi & Partners - Studio Legale"
+    },
+    {
+      "id": "54a46d7074686936760a7946",
+      "first_name": "Luca",
+      "organization_name": "Studio Legale"
+    },
+    {
+      "id": "63490a67936e3200015f2b52",
+      "first_name": "Ilaria",
+      "organization_name": "act legal Italy"
+    },
+    {
+      "id": "6129c788f0a6340001145fda",
+      "first_name": "Carlotta",
+      "organization_name": "Smart Law Studio Legale"
+    },
+    {
+      "id": "57e1e41ba6da98093ee4253c",
+      "first_name": "Stefanie",
+      "organization_name": "Izzi Toniatti Martini & Partners Studio Legale"
+    },
+    {
+      "id": "57e1c89fa6da9856d6386b25",
+      "first_name": "Sara",
+      "organization_name": "TaxWise - Avvocati & Tributaristi"
+    }
+  ],
+  [
+    {
+      "id": "57d572f6a6da98538e814a7d",
+      "first_name": "Matteo",
+      "organization_name": "WE-BRIDGE Tax Legal Compliance"
+    },
+    {
+      "id": "54a8c7d874686930ad6f5d05",
+      "first_name": "Mario",
+      "organization_name": "Studio Legale"
+    },
+    {
+      "id": "5ff9658bea98c00001c63e1f",
+      "first_name": "Fabio",
+      "organization_name": "Missale&Partners - Studio Legale StP a R.L."
+    },
+    {
+      "id": "54a941dd746869334ac35a10",
+      "first_name": "Emanuele",
+      "organization_name": "FDL Studio legale"
+    },
+    {
+      "id": "54a4f4c774686932094d9b70",
+      "first_name": "Andrea",
+      "organization_name": "Smart Law Studio Legale"
+    },
+    {
+      "id": "57e15e64a6da987d64979c83",
+      "first_name": "Francesca",
+      "organization_name": "MADlex - Musumeci, Altara, Desana & Associati"
+    },
+    {
+      "id": "54a82ac974686975f834e464",
+      "first_name": "Sergio",
+      "organization_name": "Studio SFP"
+    },
+    {
+      "id": "66f76ee89cab9000011873a0",
+      "first_name": "Claudia",
+      "organization_name": "LMCR / Studio Legale"
+    },
+    {
+      "id": "632343ec8370a300018f947f",
+      "first_name": "Roberta",
+      "organization_name": "ELLED - Scordino De Bellis Law Firm"
+    },
+    {
+      "id": "5e7faf6b197db1000134f3cb",
+      "first_name": "Giada",
+      "organization_name": "Studio Legale Associato Longo Barelli"
+    }
+  ],
+  [
+    {
+      "id": "57deaf1aa6da987b015dc222",
+      "first_name": "Francesco",
+      "organization_name": "Battaglia & Arceri"
+    },
+    {
+      "id": "6422faa700347d000188c59e",
+      "first_name": "Fabio",
+      "organization_name": "TP LEGAL - Studio Legale"
+    },
+    {
+      "id": "54a2ee0674686930c294cd47",
+      "first_name": "Alberto",
+      "organization_name": "TP LEGAL - Studio Legale"
+    },
+    {
+      "id": "6280f9aa50fa2600014205b4",
+      "first_name": "Miriam",
+      "organization_name": "Accolla Law Firm"
+    },
+    {
+      "id": "54ec2bb3746869444c7c075e",
+      "first_name": "Elena",
+      "organization_name": "Athena Law Firm"
+    },
+    {
+      "id": "66ee66f7ac3e0f00018da85e",
+      "first_name": "Letizia",
+      "organization_name": "Greco Vitali Associati - Studio Legale"
+    },
+    {
+      "id": "57d59d67a6da9853f54a5787",
+      "first_name": "Anna",
+      "organization_name": "Studio Notarile Giordano"
+    },
+    {
+      "id": "687bb01c419df000019f5945",
+      "first_name": "Beatrice",
+      "organization_name": "ELLED - Scordino De Bellis Law Firm"
+    },
+    {
+      "id": "63f6cf42669e690001d90d75",
+      "first_name": "Morena",
+      "organization_name": "Tasca Law Firm"
+    },
+    {
+      "id": "54a462a074686938ac32aa43",
+      "first_name": "Marco",
+      "organization_name": "scium\u00e9 legal & tax"
+    }
+  ],
+  [
+    {
+      "id": "54a5302a74686936761ae083",
+      "first_name": "Renzo",
+      "organization_name": "Athena Law Firm"
+    },
+    {
+      "id": "54a30d537468693cdd73ed50",
+      "first_name": "Alessio",
+      "organization_name": "Studio Legale"
+    },
+    {
+      "id": "57d37784f651252c074ee54e",
+      "first_name": "Federico",
+      "organization_name": "RLS studio legale associato"
+    },
+    {
+      "id": "6478c75f8c09ee0001cbee5c",
+      "first_name": "Gherardo",
+      "organization_name": "Studio SFP"
+    },
+    {
+      "id": "6982fdc7188f810001a37643",
+      "first_name": "Riccardo",
+      "organization_name": "Greco Vitali Associati - Studio Legale"
+    },
+    {
+      "id": "5c4d2ffea3ae61471460137c",
+      "first_name": "Gabriele",
+      "organization_name": "Panini Bucciarelli Law Firm"
+    },
+    {
+      "id": "68145967573f3600016c7aa2",
+      "first_name": "Grazia",
+      "organization_name": "Panini Bucciarelli Law Firm"
+    },
+    {
+      "id": "69df6e4dd0e62a00013eb74f",
+      "first_name": "Alessandro",
+      "organization_name": "SLC - Milan Law Firm"
+    },
+    {
+      "id": "68c9354cb781f0000162e553",
+      "first_name": "Silvia",
+      "organization_name": "SLC - Milan Law Firm"
+    },
+    {
+      "id": "57e0226da6da980b414e09d9",
+      "first_name": "Enrico",
+      "organization_name": "TP LEGAL - Studio Legale"
+    }
+  ],
+  [
+    {
+      "id": "61d7d34a1b7c86000192e7df",
+      "first_name": "Francesco",
+      "organization_name": "FDL Studio legale"
+    },
+    {
+      "id": "54ab52787468690ae61a9b02",
+      "first_name": "Giovanna",
+      "organization_name": "Accolla Law Firm"
+    },
+    {
+      "id": "64257ec5ebacbc00012ef1cc",
+      "first_name": "Gian",
+      "organization_name": "TP LEGAL - Studio Legale"
+    },
+    {
+      "id": "5d409d72a3ae61904187f896",
+      "first_name": "Annamaria",
+      "organization_name": "Verno Law Firm"
+    },
+    {
+      "id": "54ec19ff74686943113e2350",
+      "first_name": "Pierantonio",
+      "organization_name": "Laward - Avvocati Associati"
+    },
+    {
+      "id": "642ad2fba7f7400001b7b224",
+      "first_name": "Lucia",
+      "organization_name": "TP LEGAL - Studio Legale"
+    },
+    {
+      "id": "5b27c302a6da98c3987411fe",
+      "first_name": "Marco",
+      "organization_name": "Studio Legale Metta"
+    },
+    {
+      "id": "57e19daea6da982dd5382be0",
+      "first_name": "Marcello",
+      "organization_name": "Studio Legale Trevisan & Associati"
+    },
+    {
+      "id": "54a512d17468692fa224187b",
+      "first_name": "Carlo",
+      "organization_name": "FDL Studio legale"
+    },
+    {
+      "id": "5f5c0eb3386ff00001754128",
+      "first_name": "Francesca",
+      "organization_name": "Izzi Toniatti Martini & Partners Studio Legale"
+    }
+  ],
+  [
+    {
+      "id": "56386619a6da9857e6004fd2",
+      "first_name": "Lodovico",
+      "organization_name": "Poggio Saraceno, Avvocati"
+    },
+    {
+      "id": "54a6f1027468696b7f1b6106",
+      "first_name": "Francesco",
+      "organization_name": "Studio Pierallini"
+    },
+    {
+      "id": "635983b1b5d80c000162f9ad",
+      "first_name": "Giovanni",
+      "organization_name": "Arcadia Studio Legale e Tributario"
+    },
+    {
+      "id": "54a93cec74686930ad8bbe0e",
+      "first_name": "Cristina",
+      "organization_name": "Panini Bucciarelli Law Firm"
+    },
+    {
+      "id": "57e06d77a6da981bf1eba60f",
+      "first_name": "Gianluigi",
+      "organization_name": "Studio Pierallini"
+    },
+    {
+      "id": "54a2f4797468693318e04b49",
+      "first_name": "Paolo",
+      "organization_name": "Frignani Virano e Associati"
+    },
+    {
+      "id": "662efdbb66ad2d000716314d",
+      "first_name": "Giacomo",
+      "organization_name": "Studio Garofalo"
+    },
+    {
+      "id": "6257ac7b456a4d00014a9d23",
+      "first_name": "Francesco",
+      "organization_name": "Agnoli Law"
+    },
+    {
+      "id": "65ba49f03891f100010bdec8",
+      "first_name": "Paolo",
+      "organization_name": "Studio Pierallini"
+    },
+    {
+      "id": "54c262cc7468691639ba8e92",
+      "first_name": "Guido",
+      "organization_name": "M&P MognonPartners - Studio Legale"
+    }
+  ],
+  [
+    {
+      "id": "54a3e9ab7468692fa2e2001d",
+      "first_name": "Alessandra",
+      "organization_name": "Frignani Virano e Associati"
+    },
+    {
+      "id": "60cfd8c812ff890001469acc",
+      "first_name": "Emanuele",
+      "organization_name": "Ceccarelli & Silvestri Boutique Law Firm"
+    },
+    {
+      "id": "5ad7b73da6da98e312a12b10",
+      "first_name": "Giulia",
+      "organization_name": "DRBG Law Firm"
+    },
+    {
+      "id": "5e735772153c9e000121e330",
+      "first_name": "Vittoria",
+      "organization_name": "Futura Law Firm S.t.a.r.l. S.B."
+    },
+    {
+      "id": "54a2dd8274686938258ff242",
+      "first_name": "Antonio",
+      "organization_name": "AVVECOMM LEGAL"
+    },
+    {
+      "id": "557147fe7369642c439d2b00",
+      "first_name": "Dario",
+      "organization_name": "Studio Plura"
+    },
+    {
+      "id": "57ddc1cda6da987b59dc6d77",
+      "first_name": "Serena",
+      "organization_name": "AMSL Avvocati"
+    },
+    {
+      "id": "57d537d5a6da9853ee9e318e",
+      "first_name": "Emanuela",
+      "organization_name": "AMSL Avvocati"
+    },
+    {
+      "id": "5e8fbd3e221cac000143ce37",
+      "first_name": "Domenico",
+      "organization_name": "AMSL Avvocati"
+    },
+    {
+      "id": "57d3403aa6da986568545c49",
+      "first_name": "Giuseppe",
+      "organization_name": "Agnoli Law"
+    }
+  ],
+  [
+    {
+      "id": "54a495237468692abf1fa852",
+      "first_name": "Mario",
+      "organization_name": "CdB Avvocati Law Firm"
+    },
+    {
+      "id": "65d47e4dccd0120001381a34",
+      "first_name": "Giorgia",
+      "organization_name": "Studio Legale Cassinelli"
+    },
+    {
+      "id": "54aa953874686908c80b6b0c",
+      "first_name": "Paolo",
+      "organization_name": "Studio Legale Cassinelli"
+    },
+    {
+      "id": "61d6baa0a7d87400013c99ab",
+      "first_name": "Marzio",
+      "organization_name": "Studio Legale Associato GB"
+    },
+    {
+      "id": "67ce41bfc957900001655b34",
+      "first_name": "Carla",
+      "organization_name": "AVVECOMM LEGAL"
+    },
+    {
+      "id": "6347419c64a82500017f4856",
+      "first_name": "Marco",
+      "organization_name": "Studio Legale Manfredi"
+    },
+    {
+      "id": "54a23f047468693fdae68419",
+      "first_name": "Nicola",
+      "organization_name": "MGG LAW FIRM"
+    },
+    {
+      "id": "5f66e3916cb54a00012afe07",
+      "first_name": "Piermarco",
+      "organization_name": "Studio Industria, The Next Level Business"
+    },
+    {
+      "id": "58b1c363f65125f51a350c1c",
+      "first_name": "Edoardo",
+      "organization_name": "ALLEGAL - Studio Legale Associato | Law firm"
+    },
+    {
+      "id": "6359609b3f957300015911b7",
+      "first_name": "Emanuele",
+      "organization_name": "MGG LAW FIRM"
+    }
+  ],
+  [
+    {
+      "id": "565f7a0ea6da98262800b134",
+      "first_name": "Emanuele",
+      "organization_name": "AVVECOMM LEGAL"
+    },
+    {
+      "id": "66ab2f079cc5c400011df1a5",
+      "first_name": "Antonio",
+      "organization_name": "OnLex Studio Legale"
+    },
+    {
+      "id": "6425a39ee4dc950001ddc522",
+      "first_name": "Maria",
+      "organization_name": "BLF Studio Legale"
+    },
+    {
+      "id": "56339e7ba6da9808ad002184",
+      "first_name": "Maria",
+      "organization_name": "Studio Bia Legali Associati"
+    },
+    {
+      "id": "5e5d6ce3df2d6e000153e9df",
+      "first_name": "Gennaro",
+      "organization_name": "DI FIORE NUNZIATO AVVOCATI TRIBUTARISTI"
+    },
+    {
+      "id": "634a3a04e6d42d0001c34738",
+      "first_name": "Michele",
+      "organization_name": "PSP Legal - Law Firm"
+    },
+    {
+      "id": "5abbf3bca6da98414e6dd2a4",
+      "first_name": "Annarita",
+      "organization_name": "DI FIORE NUNZIATO AVVOCATI TRIBUTARISTI"
+    },
+    {
+      "id": "62b04bf1c81dea00018fcd51",
+      "first_name": "Michelangelo",
+      "organization_name": "VILLA & Associati"
+    },
+    {
+      "id": "66f9900d544a4a00014a6b0c",
+      "first_name": "Giovanni",
+      "organization_name": "BLF Studio Legale"
+    },
+    {
+      "id": "57dbbf72a6da98687b46c59b",
+      "first_name": "Riccardo",
+      "organization_name": "SLC - Chindamo & Partners Law Firm"
+    }
+  ],
+  [
+    {
+      "id": "698458e6e5205900017d8795",
+      "first_name": "Pietro",
+      "organization_name": "act legal Italy"
+    },
+    {
+      "id": "57d73af9a6da985ba846743f",
+      "first_name": "Anna",
+      "organization_name": "PASCOTTO LEGAL AVVOCATI PLA"
+    },
+    {
+      "id": "54a3dbae7468693209d6c518",
+      "first_name": "Nicola",
+      "organization_name": "BLF Studio Legale"
+    },
+    {
+      "id": "57d3e91fa6da9853a09bbee5",
+      "first_name": "Veronica",
+      "organization_name": "SLC - Chindamo & Partners Law Firm"
+    },
+    {
+      "id": "5e8151c02d4b3000017163f7",
+      "first_name": "Anna",
+      "organization_name": "BLF Studio Legale"
+    },
+    {
+      "id": "64231158f45e0a00018216bb",
+      "first_name": "Alice",
+      "organization_name": "GSCD Avvocati"
+    },
+    {
+      "id": "6430243c909ddc000180368a",
+      "first_name": "Michele",
+      "organization_name": "BLF Studio Legale"
+    },
+    {
+      "id": "54a71f0374686965d9563417",
+      "first_name": "Davide",
+      "organization_name": "Lambertini & Partners Law Firm"
+    },
+    {
+      "id": "619c6c8824fc3b00018988d1",
+      "first_name": "Francesca",
+      "organization_name": "Lambertini & Partners Law Firm"
+    },
+    {
+      "id": "54c1d2fa7468691639928a4c",
+      "first_name": "Clara",
+      "organization_name": "Studio Legale Gualtieri"
+    }
+  ],
+  [
+    {
+      "id": "54aad326746869063067881b",
+      "first_name": "Marco",
+      "organization_name": "Lambertini & Partners Law Firm"
+    },
+    {
+      "id": "68c921cc3957aa0001f9619b",
+      "first_name": "Giorgia",
+      "organization_name": "MINNELLA COPPA & ASSOCIATI"
+    },
+    {
+      "id": "65629778fa3ad10001be4780",
+      "first_name": "Matteo",
+      "organization_name": "GSCD Avvocati"
+    },
+    {
+      "id": "54aa9c9974686906301b6f0e",
+      "first_name": "Chiara",
+      "organization_name": "Greco Vitali Associati - Studio Legale"
+    },
+    {
+      "id": "61528f5328e3720001469d79",
+      "first_name": "Gianluca",
+      "organization_name": "GSCD Avvocati"
+    },
+    {
+      "id": "66ff6b963f12c90001e6e11f",
+      "first_name": "Nicolo",
+      "organization_name": "Improda Studio Legale"
+    },
+    {
+      "id": "557079ce736964209a2f0900",
+      "first_name": "Eulalia",
+      "organization_name": "Studio Legale Malimpensa"
+    },
+    {
+      "id": "5db90dae7911fe000131ec45",
+      "first_name": "Francesca",
+      "organization_name": "Lambertini & Partners Law Firm"
+    },
+    {
+      "id": "55cbf4fff3e5bb6c5f0012fd",
+      "first_name": "Giulia",
+      "organization_name": "Lambertini & Partners Law Firm"
+    },
+    {
+      "id": "54a6e90274686965d97e6803",
+      "first_name": "Domenico",
+      "organization_name": "Greco Vitali Associati - Studio Legale"
+    }
+  ],
+  [
+    {
+      "id": "66a85d68893ea700010a229e",
+      "first_name": "Alessandro",
+      "organization_name": "Laroma Jezzi & Partners - Studio Legale"
+    },
+    {
+      "id": "57d8c0bea6da98722228bcd9",
+      "first_name": "Marcello",
+      "organization_name": "Alfa Legal"
+    },
+    {
+      "id": "54aaba6a7468690b75451915",
+      "first_name": "Giovanni",
+      "organization_name": "Greco Vitali Associati - Studio Legale"
+    },
+    {
+      "id": "54a2db9d7468693fdac5ea41",
+      "first_name": "Andrea",
+      "organization_name": "Greco Vitali Associati - Studio Legale"
+    },
+    {
+      "id": "6244b30b38e62f000184d734",
+      "first_name": "Cristiana",
+      "organization_name": "Studio Legale Associato GB"
+    },
+    {
+      "id": "5e84b9b50c4041000192336e",
+      "first_name": "Filippo",
+      "organization_name": "Materia Studio Legale"
+    },
+    {
+      "id": "57dfa189a6da980acde39834",
+      "first_name": "Federico",
+      "organization_name": "Laroma Jezzi & Partners - Studio Legale"
+    },
+    {
+      "id": "54a634047468692fa24602cb",
+      "first_name": "Denis",
+      "organization_name": "Studio Legale Capello - Associazione Professionale"
+    },
+    {
+      "id": "61baba5cd8280b0001e6ddcd",
+      "first_name": "Teresa",
+      "organization_name": "PREUSSLER GRUBER PARTNERS"
+    },
+    {
+      "id": "6323072816cd55000145c09a",
+      "first_name": "Beatrice",
+      "organization_name": "PASCOTTO LEGAL AVVOCATI PLA"
+    }
+  ],
+  [
+    {
+      "id": "635945967aa00e0001809175",
+      "first_name": "Deborah",
+      "organization_name": "Alfa Legal"
+    },
+    {
+      "id": "5f0469ae68b5790001fbc47b",
+      "first_name": "Marialetizia",
+      "organization_name": "Studio Legale Malimpensa"
+    },
+    {
+      "id": "614ecfbc888ae600015c1155",
+      "first_name": "Danilo",
+      "organization_name": "PSP Legal - Law Firm"
+    },
+    {
+      "id": "57e13e4da6da987da42309a6",
+      "first_name": "Alessandra",
+      "organization_name": "THEMIS - Studio legale"
+    },
+    {
+      "id": "69a6639a1e03ec0001395bab",
+      "first_name": "Carla",
+      "organization_name": "Lambertini & Partners Law Firm"
+    },
+    {
+      "id": "54a430ea7468693676d0b133",
+      "first_name": "Domizia",
+      "organization_name": "THEMIS - Studio legale"
+    },
+    {
+      "id": "6718808b49c3e7000117b463",
+      "first_name": "Gian",
+      "organization_name": "Schiavello & Co"
+    },
+    {
+      "id": "57d4ff18a6da98539686aa5d",
+      "first_name": "Paola",
+      "organization_name": "THEMIS - Studio legale"
+    },
+    {
+      "id": "54a42c817468692cf07e3f32",
+      "first_name": "Alessio",
+      "organization_name": "Laward - Avvocati Associati"
+    },
+    {
+      "id": "54aba531746869332d9b0b03",
+      "first_name": "Raffaella",
+      "organization_name": "Studio Legale Barberi Bellini Rondinone Santaroni & Partners"
+    }
+  ],
+  [
+    {
+      "id": "6982ffa04929aa0001d54640",
+      "first_name": "Giancarlo",
+      "organization_name": "PSP Legal - Law Firm"
+    },
+    {
+      "id": "5de46950abfa800001c1e7d9",
+      "first_name": "Chiara",
+      "organization_name": "Donativi e Associati"
+    },
+    {
+      "id": "5e6017d0d303dd0001f90692",
+      "first_name": "Silvia",
+      "organization_name": "LexAlliance"
+    },
+    {
+      "id": "5d42f9d0a3ae61868135d54e",
+      "first_name": "Marianna",
+      "organization_name": "Studio NL Avvocati & Commercialisti"
+    },
+    {
+      "id": "66a9b7e613d32f000111eeac",
+      "first_name": "Davide",
+      "organization_name": "DI FIORE NUNZIATO AVVOCATI TRIBUTARISTI"
+    },
+    {
+      "id": "57e09084a6da981c34725bb0",
+      "first_name": "Marianna",
+      "organization_name": "Mercanti e Associati \u2013 Studio legale e tributario"
+    },
+    {
+      "id": "63e7accab8e6c90001b8f630",
+      "first_name": "Enza",
+      "organization_name": "FairWise"
+    },
+    {
+      "id": "64242ed209a76c00013b244c",
+      "first_name": "Paola",
+      "organization_name": "ZAGNI Studio Legale"
+    },
+    {
+      "id": "57db894aa6da9868c2958fe3",
+      "first_name": "Silvia",
+      "organization_name": "Studio Legale Penco"
+    },
+    {
+      "id": "57d8b54da6da98729bcc9f0b",
+      "first_name": "Fabiana",
+      "organization_name": "ALIANT|LEGAL GROUNDS"
+    }
+  ],
+  [
+    {
+      "id": "5ffe76b3c11ac40001d7709b",
+      "first_name": "Valentina",
+      "organization_name": "Donativi e Associati"
+    },
+    {
+      "id": "5d6469f5f65125058855dbe2",
+      "first_name": "Fabiola",
+      "organization_name": "LEAD Studio Legale"
+    },
+    {
+      "id": "54a74e067468696829ed1928",
+      "first_name": "Stefania",
+      "organization_name": "Studio Legale"
+    },
+    {
+      "id": "683b923ee891030001be1e05",
+      "first_name": "Luca",
+      "organization_name": "Missale&Partners - Studio Legale StP a R.L."
+    },
+    {
+      "id": "54a451ac7468692cf05ef33d",
+      "first_name": "Benedetta",
+      "organization_name": "THEMIS - Studio legale"
+    },
+    {
+      "id": "676fd13caee7bc0001f56d4a",
+      "first_name": "Alessia",
+      "organization_name": "LEAD Studio Legale"
+    },
+    {
+      "id": "55708d0a73696425ea7d0a00",
+      "first_name": "Marco",
+      "organization_name": "Studio Legale Associato Merlin & Tonellotto"
+    },
+    {
+      "id": "57decff7a6da987ae8cdbfa0",
+      "first_name": "Elena",
+      "organization_name": "Franco Baudino e Associati"
+    },
+    {
+      "id": "54a315d17468693fdab3e452",
+      "first_name": "Nicola",
+      "organization_name": "Studio Legale Massafra S.T.A. S.r.l."
+    },
+    {
+      "id": "60fa527338e9e900010f648f",
+      "first_name": "Avvocato",
+      "organization_name": "Studio Legale Cova"
+    }
+  ],
+  [
+    {
+      "id": "54a546d27468692fa221788b",
+      "first_name": "Jose",
+      "organization_name": "LEXPERTISE Legal Network"
+    },
+    {
+      "id": "6734840041191c0001a92729",
+      "first_name": "Giorgio",
+      "organization_name": "Studio Legale Losacco & Partners"
+    },
+    {
+      "id": "5570a13a7369641863001400",
+      "first_name": "Cristina",
+      "organization_name": "ZAGNI Studio Legale"
+    },
+    {
+      "id": "57e0dd16a6da987dbcea9d78",
+      "first_name": "Arnaldo",
+      "organization_name": "PSP Legal - Law Firm"
+    },
+    {
+      "id": "55714b8d7369645310ee6800",
+      "first_name": "Susanna",
+      "organization_name": "GTA Studio Legale"
+    },
+    {
+      "id": "557021637369646daf5e0d00",
+      "first_name": "Edoardo",
+      "organization_name": "THEMIS - Studio legale"
+    },
+    {
+      "id": "557148647369642c14742e00",
+      "first_name": "Gaspare",
+      "organization_name": "Studio Legale Trizzino Triulzi"
+    },
+    {
+      "id": "63229cf09971b900015cb5af",
+      "first_name": "Marco",
+      "organization_name": "Studio Avvocato Spolidoro Associazione Professionale"
+    },
+    {
+      "id": "5ae349eea6da981cd2d12ed7",
+      "first_name": "Gustavo",
+      "organization_name": "Studio Ghidini, Girino e Associati"
+    },
+    {
+      "id": "57d348d8a6da9865a050456e",
+      "first_name": "Paola",
+      "organization_name": "Studia Iuris"
+    }
+  ],
+  [
+    {
+      "id": "5d3a43fc80f93ea8359d87d4",
+      "first_name": "Valentina",
+      "organization_name": "EO Legal"
+    },
+    {
+      "id": "57ddf9aaa6da987aec22bdee",
+      "first_name": "Francesca",
+      "organization_name": "Laroma Jezzi & Partners - Studio Legale"
+    },
+    {
+      "id": "54ec3ee4746869444cda0e6e",
+      "first_name": "Irene",
+      "organization_name": "Studio Legale Lepre"
+    },
+    {
+      "id": "57d5b92ca6da985386c7b677",
+      "first_name": "Antonio",
+      "organization_name": "Fair Legals"
+    },
+    {
+      "id": "612a58878a962700018c05aa",
+      "first_name": "Riccardo",
+      "organization_name": "EO Legal"
+    },
+    {
+      "id": "57e0690ca6da981bed8a9325",
+      "first_name": "Arianna",
+      "organization_name": "Genesis Avvocati"
+    },
+    {
+      "id": "57ddc303a6da987aec21fbd2",
+      "first_name": "Giulio",
+      "organization_name": "Alpeggiani Avvocati Associati"
+    },
+    {
+      "id": "54a55dc87468693b8cc18992",
+      "first_name": "Alessandra",
+      "organization_name": "Studio Legale Soldati"
+    },
+    {
+      "id": "642ec4e1833991000177090f",
+      "first_name": "Alessia",
+      "organization_name": "TP LEGAL - Studio Legale"
+    },
+    {
+      "id": "5ab799fba6da98af94b24b41",
+      "first_name": "Maria",
+      "organization_name": "Studio Legale Gualtieri"
+    }
+  ],
+  [
+    {
+      "id": "642d6ba1ef74b50001f96a9a",
+      "first_name": "Elio",
+      "organization_name": "DELEX LAW FIRM"
+    },
+    {
+      "id": "674974d545a23300010fe787",
+      "first_name": "Elvira",
+      "organization_name": "Studio Legale Losacco & Partners"
+    },
+    {
+      "id": "642467bc5e60ac00010c8bbe",
+      "first_name": "Marta",
+      "organization_name": "EO Legal"
+    },
+    {
+      "id": "664ec3e2b591da0001f7b256",
+      "first_name": "Elisa",
+      "organization_name": "Scorcelli & Partners - Studio Legale"
+    },
+    {
+      "id": "5e65d6fd162dd7000150cc35",
+      "first_name": "Mariaines",
+      "organization_name": "TL - Tax & Legal Partners"
+    },
+    {
+      "id": "66a6ede8c811390001914139",
+      "first_name": "Francesco",
+      "organization_name": "Alpeggiani Avvocati Associati"
+    },
+    {
+      "id": "5ac470d0a6da980253e08bf0",
+      "first_name": "Alessandra",
+      "organization_name": "Studio Legale Salardi"
+    },
+    {
+      "id": "5e5db5261eea12000144fe95",
+      "first_name": "Cristina",
+      "organization_name": "Alpeggiani Avvocati Associati"
+    },
+    {
+      "id": "66a9e85729b3b6000173ed86",
+      "first_name": "Angela",
+      "organization_name": "FairWise"
+    },
+    {
+      "id": "54a26b567468693825f0c021",
+      "first_name": "Gilda",
+      "organization_name": "Studio Legale"
+    }
+  ],
+  [
+    {
+      "id": "54a436227468692fa21c7335",
+      "first_name": "Riccardo",
+      "organization_name": "Flag Legal"
+    },
+    {
+      "id": "57d5ddbba6da9853765f9b53",
+      "first_name": "Alessandra",
+      "organization_name": "EO Legal"
+    },
+    {
+      "id": "649012ee432bbc0001914370",
+      "first_name": "Vittorio",
+      "organization_name": "Genesis Avvocati"
+    },
+    {
+      "id": "5c47f926f651258a98e69175",
+      "first_name": "Beatrice",
+      "organization_name": "Studio Associato Montevecchi & Foschi"
+    },
+    {
+      "id": "6133c16da756d700016aaac5",
+      "first_name": "Marco",
+      "organization_name": "EO Legal"
+    },
+    {
+      "id": "54a33a2874686930c242fe5d",
+      "first_name": "Benedetta",
+      "organization_name": "Studio Legale"
+    },
+    {
+      "id": "557131ca73696453d5a60d00",
+      "first_name": "Jacopo",
+      "organization_name": "SLED - Studio Legale Associato E&D"
+    },
+    {
+      "id": "634a420b5d3dfb0001e4faf6",
+      "first_name": "Sofia",
+      "organization_name": "Tasca Law Firm"
+    },
+    {
+      "id": "626a5301aa1f870001cd23df",
+      "first_name": "Elena",
+      "organization_name": "Tombari D'Angelo e Associati"
+    },
+    {
+      "id": "600e0c6a363d9a00011bca27",
+      "first_name": "Giulia",
+      "organization_name": "EO Legal"
+    }
+  ],
+  [
+    {
+      "id": "67b0005d9b111000017cff6e",
+      "first_name": "Davide",
+      "organization_name": "TP LEGAL - Studio Legale"
+    },
+    {
+      "id": "61280e4f0c23a600019fe79d",
+      "first_name": "Voltaggio",
+      "organization_name": "Studio Legale Voltaggio STA a r.l."
+    },
+    {
+      "id": "66fffeceb3fb56000169e1f4",
+      "first_name": "Stefano",
+      "organization_name": "act legal Italy"
+    },
+    {
+      "id": "54a5e1c27468692fa2c3a3b0",
+      "first_name": "Gianluigi",
+      "organization_name": "Studio Legale"
+    },
+    {
+      "id": "54a5ec547468693209b5deb3",
+      "first_name": "Ciro",
+      "organization_name": "Studio Legale"
+    },
+    {
+      "id": "57d8520ba6da987867384b76",
+      "first_name": "Isabella",
+      "organization_name": "Studio Ghidini, Girino e Associati"
+    },
+    {
+      "id": "54a51e387468693b8c97627e",
+      "first_name": "Luca",
+      "organization_name": "Studio Legale"
+    },
+    {
+      "id": "5de38ea2e8a724000101c299",
+      "first_name": "Claudia",
+      "organization_name": "Studio Ghidini, Girino e Associati"
+    },
+    {
+      "id": "5570954873696425d22a6200",
+      "first_name": "Pietrantonio",
+      "organization_name": "Studio Legale"
+    },
+    {
+      "id": "54a58c347468692abfcc279b",
+      "first_name": "Alice",
+      "organization_name": "RML Studio Legale Associato"
+    }
+  ],
+  [
+    {
+      "id": "683976dc8ad7e00001616300",
+      "first_name": "Andrea",
+      "organization_name": "Athena Law Firm"
+    },
+    {
+      "id": "5fff4b995b8b910001a007e2",
+      "first_name": "Mario",
+      "organization_name": "TmdpLex studio legale"
+    },
+    {
+      "id": "64a944c478cb96000132fe26",
+      "first_name": "Elena",
+      "organization_name": "Studio Legale"
+    },
+    {
+      "id": "54a9ce047468692d1c837618",
+      "first_name": "Paolo",
+      "organization_name": "Studio Legale"
+    },
+    {
+      "id": "5e5d91bc4b83e90001ad751e",
+      "first_name": "Michele",
+      "organization_name": "Studio Legale"
+    },
+    {
+      "id": "66ab2ffa8d16f000011aa90a",
+      "first_name": "Vito",
+      "organization_name": "Studio Legale"
+    },
+    {
+      "id": "54a3e8af7468693209f71a1d",
+      "first_name": "Alberto",
+      "organization_name": "MADlex - Musumeci, Altara, Desana & Associati"
+    },
+    {
+      "id": "6321baaadcde74000122e4c1",
+      "first_name": "Martina",
+      "organization_name": "AvvNet"
+    },
+    {
+      "id": "54fb3bf07468691d11bc0d0c",
+      "first_name": "Hillary",
+      "organization_name": "RML Studio Legale Associato"
+    },
+    {
+      "id": "57d8c809a6da98726a9528d0",
+      "first_name": "Antonio",
+      "organization_name": "Studio Legale"
+    }
+  ],
+  [
+    {
+      "id": "57d39879f651252bfdd7ae0e",
+      "first_name": "Roberto",
+      "organization_name": "RML Studio Legale Associato"
+    },
+    {
+      "id": "5e7f68d2957fbd0001d6ba57",
+      "first_name": "Federico",
+      "organization_name": "RML Studio Legale Associato"
+    },
+    {
+      "id": "64b41e380595d90001aea555",
+      "first_name": "Vladimiro",
+      "organization_name": "Studio Legale Gamba"
+    },
+    {
+      "id": "6429a4fbd62c1000015dc5b6",
+      "first_name": "Massimo",
+      "organization_name": "Studio Legale Negro & Santoro"
+    },
+    {
+      "id": "68e5e9b471a66300016e84d3",
+      "first_name": "Luca",
+      "organization_name": "Genesis Avvocati"
+    },
+    {
+      "id": "5642622ca6da984d0e00084f",
+      "first_name": "Christa",
+      "organization_name": "Studio Legale"
+    },
+    {
+      "id": "68675c9000ab210001e2de02",
+      "first_name": "Antonella",
+      "organization_name": "EO Legal"
+    },
+    {
+      "id": "5e7961cf143e9600016907dd",
+      "first_name": "Sara",
+      "organization_name": "Studio Legale"
+    },
+    {
+      "id": "57d517bba6da9853ae91d912",
+      "first_name": "Tiziana",
+      "organization_name": "Studio Legale Palladino"
+    },
+    {
+      "id": "54a2b97a7468693318cbcc37",
+      "first_name": "Ivano",
+      "organization_name": "SVS Lex - Selva Storoni Studio Legale"
+    }
+  ],
+  [
+    {
+      "id": "64afeb7634601e0001a08b94",
+      "first_name": "Germano",
+      "organization_name": "ASA-LEX Law Firm"
+    },
+    {
+      "id": "68c6aaee0c71cc000185b2ea",
+      "first_name": "Davide",
+      "organization_name": "MADlex - Musumeci, Altara, Desana & Associati"
+    },
+    {
+      "id": "64ee1633e1233d0001f58f28",
+      "first_name": "Davide",
+      "organization_name": "Studio Legale Vicari"
+    },
+    {
+      "id": "54ec3d7c746869444c36d76c",
+      "first_name": "Paola",
+      "organization_name": "Studio Legale"
+    },
+    {
+      "id": "57db1efda6da984bd876356a",
+      "first_name": "Sara",
+      "organization_name": "Studio Legale"
+    },
+    {
+      "id": "636e34a89a894100018d6db2",
+      "first_name": "Marco",
+      "organization_name": "Studio Legale"
+    },
+    {
+      "id": "64000331e709bc0001e1c514",
+      "first_name": "Veronica",
+      "organization_name": "ASV Notai Associati"
+    },
+    {
+      "id": "63553e2f1809020001bccfe2",
+      "first_name": "Francesca",
+      "organization_name": "Studio Ubertazzi"
+    },
+    {
+      "id": "54c18ff47468697af733b022",
+      "first_name": "Brenda",
+      "organization_name": "ALIANT|LEGAL GROUNDS"
+    },
+    {
+      "id": "64259ace70bacc0001264ab8",
+      "first_name": "Mariangela",
+      "organization_name": "Prestige Legal & Advisory"
+    }
+  ],
+  [
+    {
+      "id": "5f4c4177b09ecb00018c2393",
+      "first_name": "Michele",
+      "organization_name": "Studio Bia Legali Associati"
+    },
+    {
+      "id": "64a6bccc74e5420001984e1a",
+      "first_name": "Alessandra",
+      "organization_name": "RML Studio Legale Associato"
+    },
+    {
+      "id": "57df3b3ea6da980ad8f01cf1",
+      "first_name": "Alessandro",
+      "organization_name": "Studio Legale"
+    },
+    {
+      "id": "64230634afa3e80001ec5cf5",
+      "first_name": "Avv",
+      "organization_name": "Studio Legale"
+    },
+    {
+      "id": "6358209d73f36e0001ed8e96",
+      "first_name": "Marco",
+      "organization_name": "Zaccaria Rotella & Associati"
+    },
+    {
+      "id": "57e105e4a6da987d9c4601b1",
+      "first_name": "Luigi",
+      "organization_name": "FDL Studio legale"
+    },
+    {
+      "id": "61991c2a47bff40001b391d9",
+      "first_name": "Davide",
+      "organization_name": "Studio Pierallini"
+    },
+    {
+      "id": "54a206cb74686938259e8206",
+      "first_name": "Enrica",
+      "organization_name": "Studio Legale"
+    },
+    {
+      "id": "5d392eb8a3ae612960b6476d",
+      "first_name": "Nicola",
+      "organization_name": "TmdpLex studio legale"
+    },
+    {
+      "id": "5e77b2282c95aa00014de85d",
+      "first_name": "Silvia",
+      "organization_name": "Studio Legale"
+    }
+  ],
+  [
+    {
+      "id": "6741fbb4dfa2ab00018d4f0c",
+      "first_name": "Anna",
+      "organization_name": "Orefice & Gabriele Law firm"
+    },
+    {
+      "id": "54a518ba7468693442069f7c",
+      "first_name": "Serena",
+      "organization_name": "Libra Avvocati sta coop"
+    },
+    {
+      "id": "66f0261eeba2870001261e18",
+      "first_name": "Giuseppe",
+      "organization_name": "SCLN - LEGAL NETWORK"
+    },
+    {
+      "id": "57c57724a6da983182546f94",
+      "first_name": "Claudia",
+      "organization_name": "Futura Law Firm S.t.a.r.l. S.B."
+    },
+    {
+      "id": "62260b5cbc825d000180066e",
+      "first_name": "Jeanne",
+      "organization_name": "AMSL Avvocati"
+    },
+    {
+      "id": "68d74aa723aeaa00015b1834",
+      "first_name": "Giovanni",
+      "organization_name": "Studio Legale"
+    },
+    {
+      "id": "5f497f60b1388e000171aec8",
+      "first_name": "Silvia",
+      "organization_name": "SVS Lex - Selva Storoni Studio Legale"
+    },
+    {
+      "id": "563b049fa6da986db700a66b",
+      "first_name": "Avv",
+      "organization_name": "Studio Legale"
+    },
+    {
+      "id": "642c34d2c3d3650001b8f365",
+      "first_name": "Stefania",
+      "organization_name": "ESG Lex"
+    },
+    {
+      "id": "5e70b2352942a900011ca2ee",
+      "first_name": "Carolina",
+      "organization_name": "Canelli Law Firm Societ\u00e0 Tra Avvocati S.r.l."
+    }
+  ],
+  [
+    {
+      "id": "54a70d5d74686965d906c810",
+      "first_name": "Ilaria",
+      "organization_name": "Studio Legale"
+    },
+    {
+      "id": "57df4a56a6da980ac6bc06c0",
+      "first_name": "Sara",
+      "organization_name": "Bovesi And Partners"
+    },
+    {
+      "id": "5d394a84f65125669ee1e8ef",
+      "first_name": "Rosa",
+      "organization_name": "Studio Legale"
+    },
+    {
+      "id": "669c2fdb210524000134308d",
+      "first_name": "Roberto",
+      "organization_name": "Carta & Partners"
+    },
+    {
+      "id": "54a3eb6f7468693442f5ce1d",
+      "first_name": "Barbara",
+      "organization_name": "Studio Legale"
+    },
+    {
+      "id": "54a4c1137468692abf92c760",
+      "first_name": "Minichini",
+      "organization_name": "Studio Legale"
+    },
+    {
+      "id": "61b43c21820dc80001754074",
+      "first_name": "Larissa",
+      "organization_name": "Futura Law Firm S.t.a.r.l. S.B."
+    },
+    {
+      "id": "6347433dacd32000013aa48a",
+      "first_name": "Pierfrancesco",
+      "organization_name": "Canelli Law Firm Societ\u00e0 Tra Avvocati S.r.l."
+    },
+    {
+      "id": "557043be736964358019d300",
+      "first_name": "Laura",
+      "organization_name": "Studio Legale"
+    },
+    {
+      "id": "60291325005e4f00014fbb6d",
+      "first_name": "Marco",
+      "organization_name": "SVS Lex - Selva Storoni Studio Legale"
+    }
+  ],
+  [
+    {
+      "id": "674cf887a441ca0001745ee3",
+      "first_name": "Chiara",
+      "organization_name": "Ferraro Ginevra Gualtieri - Studio Internazionale"
+    },
+    {
+      "id": "54ec0f0e7468694311083547",
+      "first_name": "Stefania",
+      "organization_name": "Studio Legale Vicari"
+    },
+    {
+      "id": "619dd7cc969c7500012c4551",
+      "first_name": "Gabriele",
+      "organization_name": "Verzelli & Partners"
+    },
+    {
+      "id": "54a81c687468696829fde060",
+      "first_name": "Maurizio",
+      "organization_name": "Studio Legale"
+    },
+    {
+      "id": "57dcf19aa6da987ae8c7c745",
+      "first_name": "Luca",
+      "organization_name": "Studio Di Dio"
+    },
+    {
+      "id": "54abb57274686930078fe507",
+      "first_name": "Matteo",
+      "organization_name": "Studio Legale Tributario Sances"
+    },
+    {
+      "id": "5b20069fa6da98e231aa105c",
+      "first_name": "Domenico",
+      "organization_name": "Alfa Legal"
+    },
+    {
+      "id": "54ebfac77468694311ded836",
+      "first_name": "Gaetano",
+      "organization_name": "Studio Legale"
+    },
+    {
+      "id": "66f02728eba2870001268814",
+      "first_name": "Bruna",
+      "organization_name": "Bovesi And Partners"
+    },
+    {
+      "id": "57df574fa6da980b5c76b0a6",
+      "first_name": "Maurizi",
+      "organization_name": "Caiazzo Donnini Pappalardo & Associati"
+    }
+  ],
+  [
+    {
+      "id": "54a139d569702d267a728c00",
+      "first_name": "Adriana",
+      "organization_name": "Studio Legale"
+    },
+    {
+      "id": "57da01cda6da9876007df7f2",
+      "first_name": "Enrico",
+      "organization_name": "Studio Legale"
+    },
+    {
+      "id": "63fcd1fe220e380001a8bfbb",
+      "first_name": "Mattia",
+      "organization_name": "Verzelli & Partners"
+    },
+    {
+      "id": "6123c9db5d1164000194d578",
+      "first_name": "Laura",
+      "organization_name": "Studio Legale Pettinicchio"
+    },
+    {
+      "id": "5ee35b4e8183a20001a2be3e",
+      "first_name": "Federica",
+      "organization_name": "Aiello Avvocati Associati"
+    },
+    {
+      "id": "54abd7b67468692a6bf9df10",
+      "first_name": "Renato",
+      "organization_name": "Scorcelli & Partners - Studio Legale"
+    },
+    {
+      "id": "54a2994f7468693cddc6ed2e",
+      "first_name": "Tiziana",
+      "organization_name": "Studio Legale"
+    },
+    {
+      "id": "54a5ebe17468692fa241f2b3",
+      "first_name": "Alessio",
+      "organization_name": "Studio Legale Associato Mazzocchi, Stacchiotti & Caucci"
+    },
+    {
+      "id": "6628d7db357ef40006bc5f1b",
+      "first_name": "Heinz",
+      "organization_name": "HGAS - Giebelmann & Salvoni"
+    },
+    {
+      "id": "5f5b99f0d1e6c60001733a49",
+      "first_name": "Martina",
+      "organization_name": "Verzelli & Partners"
+    }
+  ]
+]
