@@ -5,16 +5,18 @@ import { MergeTool } from './components/MergeTool'
 import { ConvertTool } from './components/ConvertTool'
 import { ExtractAudioTool } from './components/ExtractAudioTool'
 import { ProgressOverlay } from './components/ProgressOverlay'
+import { MarketingChat } from './components/MarketingChat'
 import { useFFmpeg } from './hooks/useFFmpeg'
 import './App.css'
 
-type Tool = 'trim' | 'merge' | 'convert' | 'extract'
+type Tool = 'trim' | 'merge' | 'convert' | 'extract' | 'marketing'
 
 const tools: { id: Tool; label: string; icon: string; needsFile: boolean }[] = [
   { id: 'trim', label: 'Trim', icon: '✂️', needsFile: true },
   { id: 'merge', label: 'Merge', icon: '🔗', needsFile: false },
   { id: 'convert', label: 'Convert', icon: '🔄', needsFile: true },
   { id: 'extract', label: 'Extract Audio', icon: '🎵', needsFile: true },
+  { id: 'marketing', label: 'Marketing', icon: '📣', needsFile: false },
 ]
 
 function downloadBlob(blob: Blob, filename: string) {
@@ -195,7 +197,9 @@ export default function App() {
             </div>
           )}
 
-          {currentTool.needsFile && !file ? (
+          {selectedTool === 'marketing' ? (
+            <MarketingChat />
+          ) : currentTool.needsFile && !file ? (
             <div className="upload-gate">
               <VideoUploader onFileSelect={handleFileSelect} />
             </div>
