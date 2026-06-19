@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gestione Capitale - 3 Pilastri</title>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #0f1117;
+      color: #e2e8f0;
+      min-height: 100vh;
+      padding: 24px 16px;
+    }
+
+    /* ── Header ── */
+    .header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    .header h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #f8fafc;
+    }
+    .header p { color: #94a3b8; font-size: 0.9rem; margin-top: 4px; }
+
+    .capitale-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #1e2433;
+      border: 1px solid #2d3748;
+      border-radius: 14px;
+      padding: 14px 24px;
+      margin-top: 16px;
+    }
+    .capitale-box label { color: #94a3b8; font-size: 0.85rem; white-space: nowrap; }
+    .capitale-box input {
+      background: transparent;
+      border: none;
+      outline: none;
+      color: #f8fafc;
+      font-size: 1.6rem;
+      font-weight: 700;
+      width: 200px;
+      text-align: right;
+    }
+    .capitale-box .currency { color: #64748b; font-size: 1.2rem; font-weight: 600; }
+
+    /* ── Donut ── */
+    .summary-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 32px;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+    .donut-wrap { position: relative; width: 160px; height: 160px; }
+    .donut-wrap svg { transform: rotate(-90deg); }
+    .donut-center {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .donut-center .val { font-size: 0.8rem; font-weight: 700; color: #f8fafc; }
+    .donut-center .lbl { font-size: 0.65rem; color: #64748b; }
+
+    .legend { display: flex; flex-direction: column; gap: 10px; }
+    .legend-item { display: flex; align-items: center; gap: 10px; }
+    .legend-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+    .legend-name { font-size: 0.85rem; color: #cbd5e1; min-width: 140px; }
+    .legend-pct { font-size: 0.85rem; font-weight: 700; color: #f8fafc; }
+    .legend-amt { font-size: 0.75rem; color: #64748b; margin-left: 4px; }
+
+    /* ── Allocation bar ── */
+    .alloc-bar-wrap { margin-bottom: 32px; }
+    .alloc-bar-wrap label { font-size: 0.75rem; color: #64748b; display: block; margin-bottom: 6px; text-align: center; }
+    .alloc-bar {
+      height: 10px;
+      border-radius: 10px;
+      background: #1e2433;
+      display: flex;
+      overflow: hidden;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .alloc-segment { height: 100%; transition: width 0.4s ease; }
+
+    /* ── Pillars grid ── */
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .pillar-card {
+      background: #1a1f2e;
+      border-radius: 18px;
+      padding: 20px;
+      border: 1px solid #2d3748;
+      transition: border-color 0.2s;
+    }
+    .pillar-card:hover { border-color: var(--color); }
+
+    .pillar-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .pillar-icon {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem;
+      background: color-mix(in srgb, var(--color) 20%, transparent);
+      border: 1px solid color-mix(in srgb, var(--color) 40%, transparent);
+      flex-shrink: 0;
+    }
+    .pillar-title { font-size: 1rem; font-weight: 700; color: #f8fafc; }
+    .pillar-subtitle { font-size: 0.75rem; color: #64748b; }
+
+    .pillar-amounts {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 12px;
+    }
+    .pillar-total { font-size: 1.5rem; font-weight: 700; color: #f8fafc; }
+    .pillar-pct {
+      font-size: 0.9rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: color-mix(in srgb, var(--color) 15%, transparent);
+      color: var(--color);
+    }
+
+    .progress-bar {
+      height: 6px;
+      border-radius: 6px;
+      background: #2d3748;
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      border-radius: 6px;
+      background: var(--color);
+      transition: width 0.4s ease;
+    }
+
+    /* ── Voci list ── */
+    .voci-list { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; min-height: 60px; }
+    .voce-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #12151e;
+      border: 1px solid #252d3d;
+      border-radius: 10px;
+      padding: 10px 14px;
+      gap: 8px;
+    }
+    .voce-left { display: flex; align-items: center; gap: 10px; min-width: 0; }
+    .voce-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--color); flex-shrink: 0; }
+    .voce-name { font-size: 0.85rem; color: #cbd5e1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .voce-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+    .voce-amount { font-size: 0.9rem; font-weight: 700; color: #f8fafc; }
+    .voce-pct { font-size: 0.75rem; color: #64748b; }
+    .btn-remove {
+      background: none; border: none; cursor: pointer;
+      color: #475569; font-size: 1rem; line-height: 1;
+      padding: 2px 4px; border-radius: 4px;
+      transition: color 0.15s;
+    }
+    .btn-remove:hover { color: #ef4444; }
+
+    .empty-state {
+      text-align: center;
+      color: #3d4f6b;
+      font-size: 0.8rem;
+      padding: 12px 0;
+    }
+
+    /* ── Add form ── */
+    .add-form { display: flex; gap: 8px; margin-top: 4px; }
+    .add-form input {
+      flex: 1;
+      background: #12151e;
+      border: 1px solid #2d3748;
+      border-radius: 8px;
+      color: #e2e8f0;
+      font-size: 0.82rem;
+      padding: 8px 12px;
+      outline: none;
+      transition: border-color 0.2s;
+      min-width: 0;
+    }
+    .add-form input:focus { border-color: var(--color); }
+    .add-form input::placeholder { color: #3d4f6b; }
+    .add-form .inp-amt { width: 90px; flex: none; }
+    .btn-add {
+      background: var(--color);
+      border: none;
+      border-radius: 8px;
+      color: #0f1117;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 0 14px;
+      cursor: pointer;
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+    }
+    .btn-add:hover { opacity: 0.85; }
+
+    /* ── Non allocato ── */
+    .non-alloc {
+      max-width: 1100px;
+      margin: 20px auto 0;
+      background: #1a1f2e;
+      border: 1px dashed #2d3748;
+      border-radius: 14px;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .non-alloc span { color: #64748b; font-size: 0.85rem; }
+    .non-alloc strong { font-size: 1.1rem; color: #f8fafc; }
+    .non-alloc .neg { color: #ef4444; }
+
+    @media (max-width: 600px) {
+      .capitale-box input { width: 130px; font-size: 1.2rem; }
+      .summary-row { gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/babel">
+const { useState, useMemo } = React;
+
+const fmt = (n) =>
+  new Intl.NumberFormat('it-IT', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(n);
+
+const PILLARS_CONFIG = [
+  {
+    id: 'asset',
+    name: 'Asset',
+    subtitle: 'Investimenti & patrimonio',
+    icon: '📈',
+    color: '#3b82f6',
+    examples: ['BTP', 'Azioni', 'ETF', 'Immobili', 'Oro'],
+  },
+  {
+    id: 'liquidita',
+    name: 'Liquidità',
+    subtitle: 'Cash & riserva di sicurezza',
+    icon: '💧',
+    color: '#10b981',
+    examples: ['Conto corrente', 'Conto deposito', 'Fondo emergenza'],
+  },
+  {
+    id: 'business',
+    name: 'Business Operativo',
+    subtitle: 'Capitale attivo in azienda',
+    icon: '⚙️',
+    color: '#f59e0b',
+    examples: ['Magazzino', 'Circolante', 'Macchinari', 'Crediti'],
+  },
+];
+
+function DonutChart({ segments }) {
+  const R = 60, cx = 80, cy = 80, circumference = 2 * Math.PI * R;
+  let offset = 0;
+  const slices = segments.map((s) => {
+    const dash = (s.pct / 100) * circumference;
+    const gap = circumference - dash;
+    const slice = { ...s, dash, gap, offset };
+    offset += dash;
+    return slice;
+  });
+  return (
+    <svg width="160" height="160" viewBox="0 0 160 160">
+      <circle cx={cx} cy={cy} r={R} fill="none" stroke="#1e2433" strokeWidth="18" />
+      {slices.map((s) => (
+        <circle
+          key={s.id}
+          cx={cx} cy={cy} r={R}
+          fill="none"
+          stroke={s.color}
+          strokeWidth="18"
+          strokeDasharray={`${s.dash} ${s.gap}`}
+          strokeDashoffset={-s.offset}
+          style={{ transition: 'all 0.4s ease' }}
+        />
+      ))}
+    </svg>
+  );
+}
+
+function PillarCard({ config, voci, capitaleTotal, onAdd, onRemove }) {
+  const [nome, setNome] = useState('');
+  const [importo, setImporto] = useState('');
+
+  const totale = voci.reduce((s, v) => s + v.importo, 0);
+  const pct = capitaleTotal > 0 ? (totale / capitaleTotal) * 100 : 0;
+
+  const handleAdd = () => {
+    const imp = parseFloat(importo.replace(',', '.'));
+    if (!nome.trim() || isNaN(imp) || imp <= 0) return;
+    onAdd({ id: Date.now(), nome: nome.trim(), importo: imp });
+    setNome(''); setImporto('');
+  };
+
+  const style = { '--color': config.color };
+
+  return (
+    <div className="pillar-card" style={style}>
+      <div className="pillar-header">
+        <div className="pillar-icon">{config.icon}</div>
+        <div>
+          <div className="pillar-title">{config.name}</div>
+          <div className="pillar-subtitle">{config.subtitle}</div>
+        </div>
+      </div>
+
+      <div className="pillar-amounts">
+        <div className="pillar-total">{fmt(totale)}</div>
+        <div className="pillar-pct">{pct.toFixed(1)}%</div>
+      </div>
+
+      <div className="progress-bar">
+        <div className="progress-fill" style={{ width: `${Math.min(pct, 100)}%` }} />
+      </div>
+
+      <div className="voci-list">
+        {voci.length === 0 && (
+          <div className="empty-state">Nessuna voce — aggiungi qui sotto</div>
+        )}
+        {voci.map((v) => {
+          const vPct = totale > 0 ? ((v.importo / totale) * 100).toFixed(0) : 0;
+          return (
+            <div className="voce-item" key={v.id}>
+              <div className="voce-left">
+                <div className="voce-dot" />
+                <span className="voce-name" title={v.nome}>{v.nome}</span>
+              </div>
+              <div className="voce-right">
+                <span className="voce-amount">{fmt(v.importo)}</span>
+                <span className="voce-pct">{vPct}%</span>
+                <button className="btn-remove" onClick={() => onRemove(v.id)} title="Rimuovi">×</button>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="add-form">
+        <input
+          placeholder={`Es. ${config.examples[Math.floor(Math.random() * 0) || 0]}`}
+          value={nome}
+          onChange={(e) => setNome(e.target.value)}
+          onKeyDown={(e) => e.key === 'Enter' && handleAdd()}
+        />
+        <input
+          className="inp-amt"
+          placeholder="€ importo"
+          value={importo}
+          onChange={(e) => setImporto(e.target.value)}
+          onKeyDown={(e) => e.key === 'Enter' && handleAdd()}
+          type="number"
+          min="0"
+        />
+        <button className="btn-add" onClick={handleAdd} title="Aggiungi voce">+</button>
+      </div>
+    </div>
+  );
+}
+
+function App() {
+  const [capitaleStr, setCapitaleStr] = useState('1000000');
+  const [voci, setVoci] = useState({
+    asset: [
+      { id: 1, nome: 'ETF Globale', importo: 200000 },
+      { id: 2, nome: 'BTP 2030', importo: 100000 },
+    ],
+    liquidita: [
+      { id: 3, nome: 'Conto deposito', importo: 80000 },
+      { id: 4, nome: 'Fondo emergenza', importo: 40000 },
+    ],
+    business: [
+      { id: 5, nome: 'Magazzino', importo: 150000 },
+      { id: 6, nome: 'Crediti clienti', importo: 60000 },
+    ],
+  });
+
+  const capitale = useMemo(() => {
+    const n = parseFloat(capitaleStr.replace(/\./g, '').replace(',', '.'));
+    return isNaN(n) || n < 0 ? 0 : n;
+  }, [capitaleStr]);
+
+  const totals = useMemo(() =>
+    PILLARS_CONFIG.map((p) => ({
+      ...p,
+      totale: voci[p.id].reduce((s, v) => s + v.importo, 0),
+    })), [voci]);
+
+  const totalAllocato = totals.reduce((s, t) => s + t.totale, 0);
+  const nonAllocato = capitale - totalAllocato;
+
+  const segments = totals.map((t) => ({
+    id: t.id,
+    color: t.color,
+    pct: capitale > 0 ? (t.totale / capitale) * 100 : 0,
+  }));
+
+  const addVoce = (pillarId, voce) =>
+    setVoci((prev) => ({ ...prev, [pillarId]: [...prev[pillarId], voce] }));
+
+  const removeVoce = (pillarId, id) =>
+    setVoci((prev) => ({ ...prev, [pillarId]: prev[pillarId].filter((v) => v.id !== id) }));
+
+  return (
+    <div>
+      {/* Header */}
+      <div className="header">
+        <h1>Gestione Capitale</h1>
+        <p>Suddividi e monitora il tuo patrimonio nei 3 pilastri</p>
+        <div className="capitale-box">
+          <label>Capitale Totale</label>
+          <span className="currency">€</span>
+          <input
+            value={capitaleStr}
+            onChange={(e) => setCapitaleStr(e.target.value)}
+            type="number"
+            min="0"
+            title="Modifica il capitale totale"
+          />
+        </div>
+      </div>
+
+      {/* Summary */}
+      <div className="summary-row">
+        <div className="donut-wrap">
+          <DonutChart segments={segments} />
+          <div className="donut-center">
+            <span className="val">{capitale > 0 ? ((totalAllocato / capitale) * 100).toFixed(0) : 0}%</span>
+            <span className="lbl">allocato</span>
+          </div>
+        </div>
+        <div className="legend">
+          {totals.map((t) => (
+            <div className="legend-item" key={t.id}>
+              <div className="legend-dot" style={{ background: t.color }} />
+              <span className="legend-name">{t.icon} {t.name}</span>
+              <span className="legend-pct" style={{ color: t.color }}>
+                {capitale > 0 ? ((t.totale / capitale) * 100).toFixed(1) : 0}%
+              </span>
+              <span className="legend-amt">{fmt(t.totale)}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Allocation bar */}
+      <div className="alloc-bar-wrap">
+        <label>Distribuzione capitale</label>
+        <div className="alloc-bar">
+          {segments.map((s) => (
+            <div
+              key={s.id}
+              className="alloc-segment"
+              style={{ width: `${s.pct}%`, background: s.color }}
+              title={`${s.pct.toFixed(1)}%`}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Pillars */}
+      <div className="pillars">
+        {PILLARS_CONFIG.map((p) => (
+          <PillarCard
+            key={p.id}
+            config={p}
+            voci={voci[p.id]}
+            capitaleTotal={capitale}
+            onAdd={(v) => addVoce(p.id, v)}
+            onRemove={(id) => removeVoce(p.id, id)}
+          />
+        ))}
+      </div>
+
+      {/* Non allocato */}
+      <div className="non-alloc">
+        <span>Capitale non allocato</span>
+        <strong className={nonAllocato < 0 ? 'neg' : ''}>
+          {fmt(nonAllocato)}
+          {nonAllocato < 0 && ' ⚠ sovra-allocato'}
+        </strong>
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>
